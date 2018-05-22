@@ -20,6 +20,7 @@ $ yarn start
  
 - React
 - Redux
+- React Router
 - Material UI
 - Axios
 - TMBD API Data
