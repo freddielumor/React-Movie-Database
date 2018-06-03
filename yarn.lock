@@ -1298,6 +1298,10 @@ chalk@^2.0.0, chalk@^2.0.1, chalk@^2.1.0, chalk@^2.4.1:
     escape-string-regexp "^1.0.5"
     supports-color "^5.3.0"
 
+change-emitter@^0.1.2:
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/change-emitter/-/change-emitter-0.1.6.tgz#e8b2fe3d7f1ab7d69a32199aff91ea6931409515"
+
 chardet@^0.4.0:
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/chardet/-/chardet-0.4.2.tgz#b5473b33dc97c424e5d98dc87d55d4d8a29c8bf2"
@@ -1349,6 +1353,10 @@ class-utils@^0.3.5:
     define-property "^0.2.5"
     isobject "^3.0.0"
     static-extend "^0.1.1"
+
+classnames@>=2.0.0, classnames@^2.2.5:
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.5.tgz#fb3801d453467649ef3603c7d61a02bd129bde6d"
 
 clean-css@4.1.x:
   version "4.1.11"
@@ -1904,6 +1912,14 @@ dom-converter@~0.1:
   dependencies:
     utila "~0.3"
 
+dom-lib@1.0.0, dom-lib@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/dom-lib/-/dom-lib-1.0.0.tgz#d0283a23d4ab46ba4be939bcf9e87ea469b6d8db"
+
+dom-lib@1.0.0-beta:
+  version "1.0.0-beta"
+  resolved "https://registry.yarnpkg.com/dom-lib/-/dom-lib-1.0.0-beta.tgz#e2203f61954177c3e41d0efaf94f06dbd0b628e8"
+
 dom-serializer@0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/dom-serializer/-/dom-serializer-0.1.0.tgz#073c697546ce0780ce23be4a28e293e40bc30c82"
@@ -1968,6 +1984,10 @@ ee-first@1.1.1:
 electron-to-chromium@^1.2.7, electron-to-chromium@^1.3.47:
   version "1.3.48"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.48.tgz#d3b0d8593814044e092ece2108fc3ac9aea4b900"
+
+element-resize-event@^2.0.9:
+  version "2.0.9"
+  resolved "https://registry.yarnpkg.com/element-resize-event/-/element-resize-event-2.0.9.tgz#2f5e1581a296eb5275210c141bc56342e218f876"
 
 elliptic@^6.0.0:
   version "6.4.0"
@@ -2261,7 +2281,7 @@ faye-websocket@~0.11.0:
   dependencies:
     websocket-driver ">=0.5.1"
 
-fbjs@^0.8.16:
+fbjs@^0.8.1, fbjs@^0.8.16, fbjs@^0.8.4:
   version "0.8.16"
   resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-0.8.16.tgz#5e67432f550dc41b572bf55847b8aca64e5337db"
   dependencies:
@@ -2658,6 +2678,16 @@ he@1.1.x:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/he/-/he-1.1.1.tgz#93410fd21b009735151f8868c2f271f3427e23fd"
 
+history@^4.7.2:
+  version "4.7.2"
+  resolved "https://registry.yarnpkg.com/history/-/history-4.7.2.tgz#22b5c7f31633c5b8021c7f4a8a954ac139ee8d5b"
+  dependencies:
+    invariant "^2.2.1"
+    loose-envify "^1.2.0"
+    resolve-pathname "^2.2.0"
+    value-equal "^0.4.0"
+    warning "^3.0.0"
+
 hmac-drbg@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/hmac-drbg/-/hmac-drbg-1.0.1.tgz#d2745701025a6c775a6c545793ed502fc0c649a1"
@@ -2670,7 +2700,7 @@ hoek@2.x.x:
   version "2.16.3"
   resolved "https://registry.yarnpkg.com/hoek/-/hoek-2.16.3.tgz#20bb7403d3cea398e91dc4710a8ff1b8274a25ed"
 
-hoist-non-react-statics@^2.5.0:
+hoist-non-react-statics@^2.3.0, hoist-non-react-statics@^2.3.1, hoist-non-react-statics@^2.5.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-2.5.0.tgz#d2ca2dfc19c5a91c5a6615ce8e564ef0347e2a40"
 
@@ -2908,7 +2938,7 @@ interpret@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/interpret/-/interpret-1.1.0.tgz#7ed1b1410c6a0e0f78cf95d3b8440c63f78b8614"
 
-invariant@^2.2.2:
+invariant@^2.0.0, invariant@^2.2.1, invariant@^2.2.2:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/invariant/-/invariant-2.2.4.tgz#610f3c92c9359ce1db616e538008d23ff35158e6"
   dependencies:
@@ -3309,6 +3339,10 @@ locate-path@^2.0.0:
     p-locate "^2.0.0"
     path-exists "^3.0.0"
 
+lodash-es@^4.17.5:
+  version "4.17.10"
+  resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.10.tgz#62cd7104cdf5dd87f235a837f0ede0e8e5117e05"
+
 lodash.assign@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/lodash.assign/-/lodash.assign-4.2.0.tgz#0d99f3ccd7a6d261d19bdaeb9245005d285808e7"
@@ -3337,7 +3371,7 @@ lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
 
-lodash@^4.0.0, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.3.0, lodash@~4.17.10:
+lodash@^4.0.0, lodash@^4.11.1, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.3.0, lodash@~4.17.10:
   version "4.17.10"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.10.tgz#1b7793cf7259ea38fb3661d4d38b3260af8ae4e7"
 
@@ -3362,7 +3396,7 @@ long@^3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/long/-/long-3.2.0.tgz#d821b7138ca1cb581c172990ef14db200b5c474b"
 
-loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.3.1:
+loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.2.0, loose-envify@^1.3.1:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.3.1.tgz#d1a8ad33fa9ce0e713d65fdd0ac8b748d478c848"
   dependencies:
@@ -3583,6 +3617,10 @@ mkdirp@0.5.x, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@~0.5.0, mkd
   resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-0.5.1.tgz#30057438eac6cf7f8c4767f38648d6697d75c903"
   dependencies:
     minimist "0.0.8"
+
+moment@^2.20.1:
+  version "2.22.2"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.22.2.tgz#3c257f9839fc0e93ff53149632239eb90783ff66"
 
 move-concurrently@^1.0.1:
   version "1.0.1"
@@ -4061,6 +4099,12 @@ path-to-regexp@0.1.7:
   version "0.1.7"
   resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-0.1.7.tgz#df604178005f522f15eb4490e7247a1bfaa67f8c"
 
+path-to-regexp@^1.7.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-1.7.0.tgz#59fde0f435badacba103a84e9d3bc64e96b9937d"
+  dependencies:
+    isarray "0.0.1"
+
 path-type@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/path-type/-/path-type-1.1.0.tgz#59c44f7ee491da704da415da5a4070ba4f8fe441"
@@ -4401,7 +4445,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.6.0, prop-types@^15.6.1:
+prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.6.0, prop-types@^15.6.1:
   version "15.6.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.1.tgz#36644453564255ddda391191fb3a125cbdf654ca"
   dependencies:
@@ -4531,6 +4575,13 @@ rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+react-addons-shallow-compare@^15.6.2:
+  version "15.6.2"
+  resolved "https://registry.yarnpkg.com/react-addons-shallow-compare/-/react-addons-shallow-compare-15.6.2.tgz#198a00b91fc37623db64a28fd17b596ba362702f"
+  dependencies:
+    fbjs "^0.8.4"
+    object-assign "^4.1.0"
+
 react-dom@^16.3.2:
   version "16.3.2"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.3.2.tgz#cb90f107e09536d683d84ed5d4888e9640e0e4df"
@@ -4539,6 +4590,10 @@ react-dom@^16.3.2:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     prop-types "^15.6.0"
+
+react-flow-types@^0.2.0-beta.6:
+  version "0.2.0-beta.6"
+  resolved "https://registry.yarnpkg.com/react-flow-types/-/react-flow-types-0.2.0-beta.6.tgz#bf49c8b7864fcd0951b03286c63a80d66ce9fae4"
 
 react-hot-loader@^4.2.0:
   version "4.2.0"
@@ -4554,6 +4609,40 @@ react-hot-loader@^4.2.0:
 react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
+
+react-redux@^5.0.7:
+  version "5.0.7"
+  resolved "https://registry.yarnpkg.com/react-redux/-/react-redux-5.0.7.tgz#0dc1076d9afb4670f993ffaef44b8f8c1155a4c8"
+  dependencies:
+    hoist-non-react-statics "^2.5.0"
+    invariant "^2.0.0"
+    lodash "^4.17.5"
+    lodash-es "^4.17.5"
+    loose-envify "^1.1.0"
+    prop-types "^15.6.0"
+
+react-router-dom@^4.2.2:
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-4.2.2.tgz#c8a81df3adc58bba8a76782e946cbd4eae649b8d"
+  dependencies:
+    history "^4.7.2"
+    invariant "^2.2.2"
+    loose-envify "^1.3.1"
+    prop-types "^15.5.4"
+    react-router "^4.2.0"
+    warning "^3.0.0"
+
+react-router@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/react-router/-/react-router-4.2.0.tgz#61f7b3e3770daeb24062dae3eedef1b054155986"
+  dependencies:
+    history "^4.7.2"
+    hoist-non-react-statics "^2.3.0"
+    invariant "^2.2.2"
+    loose-envify "^1.3.1"
+    path-to-regexp "^1.7.0"
+    prop-types "^15.5.4"
+    warning "^3.0.0"
 
 react@^16.3.2:
   version "16.3.2"
@@ -4609,6 +4698,15 @@ readdirp@^2.0.0:
     readable-stream "^2.0.2"
     set-immediate-shim "^1.0.1"
 
+recompose@^0.26.0:
+  version "0.26.0"
+  resolved "https://registry.yarnpkg.com/recompose/-/recompose-0.26.0.tgz#9babff039cb72ba5bd17366d55d7232fbdfb2d30"
+  dependencies:
+    change-emitter "^0.1.2"
+    fbjs "^0.8.1"
+    hoist-non-react-statics "^2.3.1"
+    symbol-observable "^1.0.4"
+
 redent@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/redent/-/redent-1.0.0.tgz#cf916ab1fd5f1f16dfb20822dd6ec7f730c2afde"
@@ -4629,6 +4727,13 @@ reduce-function-call@^1.0.1:
   resolved "https://registry.yarnpkg.com/reduce-function-call/-/reduce-function-call-1.0.2.tgz#5a200bf92e0e37751752fe45b0ab330fd4b6be99"
   dependencies:
     balanced-match "^0.4.2"
+
+redux@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/redux/-/redux-4.0.0.tgz#aa698a92b729315d22b34a0553d7e6533555cc03"
+  dependencies:
+    loose-envify "^1.1.0"
+    symbol-observable "^1.2.0"
 
 regenerate@^1.2.1:
   version "1.4.0"
@@ -4783,6 +4888,10 @@ resolve-from@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/resolve-from/-/resolve-from-3.0.0.tgz#b22c7af7d9d6881bc8b6e653335eebcb0a188748"
 
+resolve-pathname@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/resolve-pathname/-/resolve-pathname-2.2.0.tgz#7e9ae21ed815fd63ab189adeee64dc831eefa879"
+
 resolve-url@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/resolve-url/-/resolve-url-0.2.1.tgz#2c637fe77c893afd2a663fe21aa9080068e2052a"
@@ -4810,6 +4919,134 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
   dependencies:
     hash-base "^3.0.0"
     inherits "^2.0.1"
+
+rsuite-cascader@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/rsuite-cascader/-/rsuite-cascader-3.0.2.tgz#5fbe45d242ca0d56f3807ee62261bdb9ec436601"
+  dependencies:
+    classnames ">=2.0.0"
+    dom-lib "^1.0.0"
+    lodash "^4.17.4"
+    prop-types "^15.5.10"
+    rsuite-intl "^1.0.3"
+
+rsuite-checkpicker@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/rsuite-checkpicker/-/rsuite-checkpicker-3.0.3.tgz#91ed46ea7ef53ccd4974b7d03b4c0b37cad7d0b5"
+  dependencies:
+    classnames ">=2.0.0"
+    dom-lib "1.0.0"
+    lodash "^4.17.4"
+    prop-types "^15.5.10"
+    rsuite-intl "^1.0.3"
+
+rsuite-checktreepicker@^3.0.5:
+  version "3.0.6"
+  resolved "https://registry.yarnpkg.com/rsuite-checktreepicker/-/rsuite-checktreepicker-3.0.6.tgz#54e61b1f5155db2a159a14240319ae6fee03f773"
+  dependencies:
+    classnames "^2.2.5"
+    dom-lib "^1.0.0"
+    lodash "^4.17.4"
+    react-addons-shallow-compare "^15.6.2"
+    rsuite-intl "^1.0.1"
+
+rsuite-datepicker@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/rsuite-datepicker/-/rsuite-datepicker-3.0.3.tgz#8fc972cbf23f00928a610b2ab7247e88d7eb0a77"
+  dependencies:
+    classnames ">=2.0.0"
+    dom-lib "^1.0.0"
+    lodash "^4.17.4"
+    moment "^2.20.1"
+    prop-types "^15.5.10"
+    rsuite-intl "^1.0.4"
+
+rsuite-daterangepicker@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/rsuite-daterangepicker/-/rsuite-daterangepicker-3.0.2.tgz#d026f69318bb8ceec4447a980a9a654614f08282"
+  dependencies:
+    classnames ">=2.0.0"
+    dom-lib "^1.0.0"
+    lodash "^4.17.4"
+    moment "^2.20.1"
+    prop-types "^15.5.10"
+    rsuite-intl "^1.0.4"
+
+rsuite-intl@^1.0.1, rsuite-intl@^1.0.3, rsuite-intl@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/rsuite-intl/-/rsuite-intl-1.0.4.tgz#182451286ad39bf0099a16490d01b9a4b4a89c16"
+  dependencies:
+    prop-types "^15.5.10"
+
+rsuite-notification@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/rsuite-notification/-/rsuite-notification-3.0.2.tgz#4a81d2913479eb570e220a1eaa68b5094f13ebde"
+  dependencies:
+    classnames "^2.2.5"
+
+rsuite-schema@0.0.12:
+  version "0.0.12"
+  resolved "https://registry.yarnpkg.com/rsuite-schema/-/rsuite-schema-0.0.12.tgz#2a466b91b4636bcdd36ff2f3d8c3a99b8cdec470"
+
+rsuite-selectpicker@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/rsuite-selectpicker/-/rsuite-selectpicker-3.0.3.tgz#9db6d03f5ecf4270956dc0c3698146a09d9ffb0f"
+  dependencies:
+    classnames ">=2.0.0"
+    dom-lib "^1.0.0"
+    lodash "^4.17.4"
+    prop-types "^15.5.10"
+    rsuite-intl "^1.0.3"
+
+rsuite-table@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/rsuite-table/-/rsuite-table-3.0.1.tgz#7613aa0efe8ac9fa4656f07102d136b4f6ed65b5"
+  dependencies:
+    classnames "^2.2.5"
+    dom-lib "^1.0.0"
+    element-resize-event "^2.0.9"
+    lodash "^4.17.5"
+    prop-types "^15.5.10"
+
+rsuite-treepicker@^3.0.3:
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/rsuite-treepicker/-/rsuite-treepicker-3.0.4.tgz#cf92e2c41a5072d626ff272fda90b1ce2a3d617a"
+  dependencies:
+    classnames "^2.2.5"
+    dom-lib "^1.0.0"
+    lodash "^4.17.4"
+    rsuite-intl "^1.0.3"
+
+rsuite-utils@^1.0.3:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/rsuite-utils/-/rsuite-utils-1.0.6.tgz#95429f02682f2906e6fa6ace4e549414f56e955a"
+  dependencies:
+    classnames "^2.2.5"
+    dom-lib "1.0.0-beta"
+    lodash "^4.17.4"
+
+rsuite@^3.0.7:
+  version "3.0.7"
+  resolved "https://registry.yarnpkg.com/rsuite/-/rsuite-3.0.7.tgz#478a9e781c3a1df4ef47f36ee206485abd9039a5"
+  dependencies:
+    classnames ">=2.0.0"
+    dom-lib "^1.0.0"
+    lodash "^4.11.1"
+    prop-types "^15.6.0"
+    react-flow-types "^0.2.0-beta.6"
+    recompose "^0.26.0"
+    rsuite-cascader "^3.0.2"
+    rsuite-checkpicker "^3.0.3"
+    rsuite-checktreepicker "^3.0.5"
+    rsuite-datepicker "^3.0.3"
+    rsuite-daterangepicker "^3.0.2"
+    rsuite-intl "^1.0.4"
+    rsuite-notification "^3.0.2"
+    rsuite-schema "0.0.12"
+    rsuite-selectpicker "^3.0.3"
+    rsuite-table "^3.0.1"
+    rsuite-treepicker "^3.0.3"
+    rsuite-utils "^1.0.3"
 
 run-async@^2.2.0:
   version "2.3.0"
@@ -5343,6 +5580,10 @@ symbol-observable@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.0.1.tgz#8340fc4702c3122df5d22288f88283f513d3fdd4"
 
+symbol-observable@^1.0.4, symbol-observable@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.2.0.tgz#c22688aed4eab3cdc2dfeacbb561660560a00804"
+
 tapable@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/tapable/-/tapable-1.0.0.tgz#cbb639d9002eed9c6b5975eb20598d7936f1f9f2"
@@ -5634,6 +5875,10 @@ validate-npm-package-license@^3.0.1:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
 
+value-equal@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/value-equal/-/value-equal-0.4.0.tgz#c5bdd2f54ee093c04839d71ce2e4758a6890abc7"
+
 vary@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
@@ -5655,6 +5900,12 @@ vm-browserify@0.0.4:
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-0.0.4.tgz#5d7ea45bbef9e4a6ff65f95438e0a87c357d5a73"
   dependencies:
     indexof "0.0.1"
+
+warning@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/warning/-/warning-3.0.0.tgz#32e5377cb572de4ab04753bdf8821c01ed605b7c"
+  dependencies:
+    loose-envify "^1.0.0"
 
 watchpack@^1.5.0:
   version "1.6.0"
