@@ -1,11 +1,11 @@
 {
-    "name": "React-Movie-Database",
+    "name": "react-movie-database",
     "version": "1.0.0",
     "description": "A React Movie Database",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "webpack-dev-server --progress --colors --config ./webpack.config.js"
+        "start": "webpack-dev-server --mode development --open --hot",
+        "build": "webpack --mode production"
     },
     "repository": {
         "type": "git",
@@ -24,17 +24,26 @@
     "bugs": {
         "url": "https://github.com/freddielumor/React-Movie-Database/issues"
     },
-    "homepage": "https://github.com/freddielumor/React-Movie-Database#readme",
+    "homepage": "./",
     "dependencies": {
+        "react": "^16.3.2",
+        "react-dom": "^16.3.2"
+    },
+    "devDependencies": {
+        "babel": "^6.23.0",
         "babel-core": "^6.26.3",
         "babel-loader": "^7.1.4",
         "babel-preset-env": "^1.7.0",
         "babel-preset-react": "^6.24.1",
         "babel-preset-stage-2": "^6.24.1",
-        "react": "^16.3.2",
-        "react-dom": "^16.3.2",
+        "css-loader": "^0.28.11",
+        "html-webpack-plugin": "^3.2.0",
+        "node-sass": "^4.9.0",
         "react-hot-loader": "^4.2.0",
-        "webpack": "^4.8.3",
+        "sass-loader": "^7.0.2",
+        "style-loader": "^0.21.0",
+        "webpack": "^4.10.2",
+        "webpack-cli": "^3.0.1",
         "webpack-dev-server": "^3.1.4"
     }
 }
