@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
+import { Grid, Row, Col } from 'rsuite';
 
 const Footer = () => (
     <footer className="app__footer">
-        <div className="row">
-            <div className="col s12">
-                <p>Developed by Freddie</p>
-            </div>
-        </div>
+        <Grid>
+            <Row>
+                <Col xs={24}>
+                    <p>Developed by Freddie</p>
+                </Col>
+            </Row>
+        </Grid>
     </footer>
 );
 

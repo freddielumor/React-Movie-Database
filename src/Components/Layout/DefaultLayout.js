@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Divider } from 'rsuite';
+import { Container, Grid, Row, Col } from 'rsuite';
 
 // Components
 import Header from './Header';
@@ -10,9 +10,11 @@ class DefaultLayout extends Component {
   render() {
     return (
         <div className="layout">
-            <Header />
-            <Main />
-            <Footer />
+            <Container>
+              <Header />
+              <Main />
+              <Footer />
+            </Container>
         </div>
     )
   }

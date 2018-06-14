@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
+import { Grid, Row, Col } from 'rsuite';
 
- class SearchResults extends Component {
+// Components
+import SearchResultCard from './SearchResultCard';
+
+class SearchResults extends Component {
     constructor() {
         super();
 
@@ -12,18 +16,17 @@ import React, { Component } from 'react';
   render() {
     return (
         <div className="search-results">
-            <div className="row">
-                <div className="col s12">
-                    <ul>
-                        <li>
-                            <a href="javascript;">
-                                <img src="" />
-                                <p>Movie Title</p>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            <h2>Latest Releases</h2>
+            <Grid>
+                <Row>
+                    <Col xs={24} sm={12}>
+                        <SearchResultCard />
+                    </Col>
+                    <Col xs={24} sm={12}>
+                        <SearchResultCard />
+                    </Col>
+                </Row>
+            </Grid>
         </div>
     )
   }

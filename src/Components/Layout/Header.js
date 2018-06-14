@@ -19,7 +19,7 @@ const Header = () => (
                 <Col xs={24}>
                     <h1 className="">React Movie Database</h1>
                     <Divider className="app__divider" />
-                    <Nav>
+                    {/* <Nav>
                         <Nav.Item
                             icon={<Icon icon="home" />}
                             componentClass={Link}
@@ -39,7 +39,7 @@ const Header = () => (
                         >
                             Categories
                     </Nav.Item>
-                    </Nav>
+                    </Nav> */}
                 </Col>
             </Row>
         </Grid>
