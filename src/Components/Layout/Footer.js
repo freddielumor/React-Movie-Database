@@ -6,7 +6,7 @@ const Footer = () => (
         <Grid>
             <Row>
                 <Col xs={24}>
-                    <p>Developed by Freddie</p>
+                    <p>React Movie Database. Data from the TMBD API </p>
                 </Col>
             </Row>
         </Grid>

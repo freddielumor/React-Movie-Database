@@ -9,27 +9,32 @@ class SearchResults extends Component {
         super();
 
         this.state = {
-            
+
         };
     }
 
-  render() {
-    return (
-        <div className="search-results">
-            <h2>Latest Releases</h2>
-            <Grid>
-                <Row>
-                    <Col xs={24} sm={12}>
-                        <SearchResultCard />
-                    </Col>
-                    <Col xs={24} sm={12}>
-                        <SearchResultCard />
-                    </Col>
-                </Row>
-            </Grid>
-        </div>
-    )
-  }
+    render() {
+        return (
+            <div className="search-results">
+                <Grid>
+                    <Row>
+                        <Col xs={24}><h2>Latest Releases</h2></Col>
+                    </Row>
+                    <Row>
+                        <Col xs={24} md={8}>
+                            <SearchResultCard />
+                        </Col>
+                        <Col xs={24} md={8}>
+                            <SearchResultCard />
+                        </Col>
+                        <Col xs={24} md={8}>
+                            <SearchResultCard />
+                        </Col>
+                    </Row>
+                </Grid>
+            </div>
+        )
+    }
 }
 
 export default SearchResults;

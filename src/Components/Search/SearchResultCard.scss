@@ -1,0 +1,11 @@
+.search-result-card {
+    height: 0;
+    padding-bottom: 50%;
+    background-color: #000;
+    &:nth-child(odd) {
+        // background-color: #000;
+    }
+    &:nth-child(even) {
+        // background-color: #fff;
+    }
+}
