@@ -9,13 +9,13 @@ import Footer from './Footer';
 class DefaultLayout extends Component {
   render() {
     return (
-        <div className="layout">
-            <Container>
-              <Header />
-              <Main />
-              <Footer />
-            </Container>
-        </div>
+      <div className="layout">
+        <Container>
+          {/* <Header /> */}
+          <Main />
+          <Footer />
+        </Container>
+      </div>
     )
   }
 }

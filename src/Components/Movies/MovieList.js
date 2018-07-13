@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { Grid, Row, Col } from 'rsuite';
 
 // Components
-import SearchResultCard from './SearchResultCard';
+import MovieCard from './MovieCard';
 
-class SearchResults extends Component {
+class MovieList extends Component {
     constructor() {
         super();
         this.state = {
@@ -13,7 +13,7 @@ class SearchResults extends Component {
 
     render() {
         return (
-            <div className="search-results">
+            <div className="movie-list">
                 <Grid fluid>
                     <Row>
                         <Col xs={24}><h2>Latest Releases</h2></Col>
@@ -38,4 +38,4 @@ class SearchResults extends Component {
     }
 }
 
-export default SearchResults;
+export default MovieList;

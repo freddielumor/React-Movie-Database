@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Grid, Row, Col } from 'rsuite';
 
 // Components
-import SearchInput from '../Search/SearchInput';
-import SearchResults from '../Search/SearchResults';
+import MovieSearch from '../Search/MovieSearch';
+import MovieList from '../Movies/MovieList';
 
 
 const Main = () => (
@@ -11,8 +11,8 @@ const Main = () => (
         <Grid>
             <Row>
                 <Col xs={24}>
-                    <SearchInput />
-                    <SearchResults />
+                    <MovieSearch />
+                    <MovieList />
                 </Col>
             </Row>
         </Grid>

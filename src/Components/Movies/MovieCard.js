@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { Grid, Row, Col } from 'rsuite';
 import { Link } from 'react-router-dom';
 
-import './SearchResultCard.scss';
+import './MovieCard.scss';
 
-class SearchResultCard extends Component {
+class MovieCard extends Component {
     constructor() {
         super();
 
@@ -15,10 +15,10 @@ class SearchResultCard extends Component {
 
     render() {
         return (
-            <div className="search-result-card">
+            <div className="movie-card">
             </div>
         )
     }
 }
 
-export default SearchResultCard;
+export default MovieCard;
