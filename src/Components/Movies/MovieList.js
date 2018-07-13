@@ -20,16 +20,16 @@ class MovieList extends Component {
                     </Row>
                     <Row>
                         <Col xs={24} sm={12} md={6}>
-                            <SearchResultCard />
+                            <MovieCard />
                         </Col>
                         <Col xs={24} sm={12} md={6}>
-                            <SearchResultCard />
+                            <MovieCard />
                         </Col>
                         <Col xs={24} sm={12} md={6}>
-                            <SearchResultCard />
+                            <MovieCard />
                         </Col>
                         <Col xs={24} sm={12} md={6}>
-                            <SearchResultCard />
+                            <MovieCard />
                         </Col>
                     </Row>
                 </Grid>
