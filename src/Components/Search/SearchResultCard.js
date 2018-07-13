@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col } from 'rsuite';
+import { Link } from 'react-router-dom';
 
 import './SearchResultCard.scss';
 
