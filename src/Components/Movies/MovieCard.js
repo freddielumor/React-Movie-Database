@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col } from 'rsuite';
 import { Link } from 'react-router-dom';
-
 import './MovieCard.scss';
 
 class MovieCard extends Component {
     constructor() {
         super();
-
         this.state = {
-
         };
     }
 
@@ -19,8 +16,8 @@ class MovieCard extends Component {
             <Link to={`/movie/${id}`} className="movie-card" id={id}>
                 <img src={`https://image.tmdb.org/t/p/w342${image}`} />
                 <div className="movie-card__details">
-                    <p>{title}</p>
-                    <p>{releaseDate}</p>
+                    <h3 className="movie-card__details-title">{title}</h3>
+                    <h4 className="movie-card__details-release-date">{releaseDate}</h4>
                 </div>
             </Link>
         )

@@ -1,17 +1,51 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col } from 'rsuite';
+import axios from 'axios';
 
 // Components
 import MovieCard from './MovieCard';
 
 class MovieList extends Component {
     constructor() {
-        super();
+        super()
         this.state = {
+            initialApiUrl: 'https://api.themoviedb.org/3/discover/movie',
+            apiUrl: 'https://api.themoviedb.org/3/search/movie',
+            apiKey: 'e0c15850977d1058ff053d4726ac46f1',
+            movieList: []
         };
     }
 
+    // Populate movie list on page load
+    componentDidMount() {
+        axios
+            .get(
+                `${this.state.initialApiUrl}?api_key=${this.state.apiKey}&primaryreleasedate.gte=2016-01-01`
+            )
+            .then(res => this.setState({ movieList: res.data.results }))
+            .catch(err => console.log(err));
+    }
+
     render() {
+
+        const { movieList } = this.state;
+        console.log({ movieList });
+
+        // Map over results & return data
+        let movieListMapped = movieList.map((item, index) => {
+            return (
+                <Col xs={24} sm={12} md={6} key={index}>
+                    <MovieCard
+                        id={item.id}
+                        image={item.poster_path}
+                        title={item.title}
+                        description={item.overview}
+                        releaseDate={item.release_date}
+                    />
+                </Col>
+            );
+        });
+
         return (
             <div className="movie-list">
                 <Grid fluid>
@@ -19,18 +53,7 @@ class MovieList extends Component {
                         <Col xs={24}><h2>Latest Releases</h2></Col>
                     </Row>
                     <Row>
-                        <Col xs={24} sm={12} md={6}>
-                            <MovieCard />
-                        </Col>
-                        <Col xs={24} sm={12} md={6}>
-                            <MovieCard />
-                        </Col>
-                        <Col xs={24} sm={12} md={6}>
-                            <MovieCard />
-                        </Col>
-                        <Col xs={24} sm={12} md={6}>
-                            <MovieCard />
-                        </Col>
+                        {movieListMapped}
                     </Row>
                 </Grid>
             </div >
