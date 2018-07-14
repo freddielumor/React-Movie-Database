@@ -10,11 +10,9 @@ class DefaultLayout extends Component {
   render() {
     return (
       <div className="layout">
-        <Container>
-          {/* <Header /> */}
+          <Header />
           <Main />
           <Footer />
-        </Container>
       </div>
     )
   }
