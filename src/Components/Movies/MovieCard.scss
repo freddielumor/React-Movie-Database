@@ -1,6 +1,14 @@
 .movie-card {
-    height: 0;
-    padding-bottom: 50%;
     margin-bottom: 1.5em;
-    background-color: #000;
+    img {
+        max-width: 100%;
+    }
+    &__details {
+        opacity: 0;
+        visibility: hidden;
+    }
+    &:hover &__details {
+        opacity: 1;
+        visibility: visible;
+    }
 }
