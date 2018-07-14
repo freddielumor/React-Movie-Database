@@ -23,13 +23,13 @@ class App extends Component {
         return (
             <Router>
                 <div className="app">
-                    <Container>
+                    <Grid>
                         <Row>
                             <Col xs={24}>
                                 <DefaultLayout />
                             </Col>
                         </Row>
-                    </Container>
+                    </Grid>
                 </div>
             </Router>
         );
