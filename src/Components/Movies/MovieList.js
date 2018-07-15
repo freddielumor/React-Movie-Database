@@ -57,7 +57,7 @@ class MovieList extends Component {
         
 
         // Map over results & return data
-        let movieListMapped = filteredMovieList.map((item, index) => {
+        let movieListMapped = movieList.map((item, index) => {
             return (
                 <Col xs={24} sm={12} md={6} key={index}>
                     <MovieCard

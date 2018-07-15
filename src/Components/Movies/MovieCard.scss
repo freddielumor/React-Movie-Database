@@ -3,8 +3,10 @@
     margin-bottom: 1.5em;
     width: 100%;
     display: block;
+    transition: all .35s ease-out;
     img {
         width: 100%;
+        height: auto;
     }
     &__details {
         opacity: 0;
