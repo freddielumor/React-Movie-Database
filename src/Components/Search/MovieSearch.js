@@ -10,57 +10,80 @@ class MovieSearch extends Component {
     constructor() {
         super()
         this.state = {
-            // searchTerm: '',
-            // initialSearchTerm: '',
-            // initialApiUrl: 'https://api.themoviedb.org/3/discover/movie',
-            // apiUrl: 'https://api.themoviedb.org/3/search/movie',
-            // apiKey: 'e0c15850977d1058ff053d4726ac46f1',
-            // initialMovieList: []
+            searchTerm: '',
+            apiUrl: 'https://api.themoviedb.org/3/search/movie',
+            apiKey: 'e0c15850977d1058ff053d4726ac46f1',
+            searchResults: []
         };
+        this.handleTextChange = this.handleTextChange.bind(this);
     }
 
-    // Populate movie list on page load
-    // componentDidMount() {
-    //     axios
-    //         .get(
-    //             `${this.state.initialApiUrl}?api_key=${this.state.apiKey}&primaryreleasedate.gte=2016-01-01`
-    //         )
-    //         .then(res => this.setState({ initialMovieList: res.data.results }))
-    //         .catch(err => console.log(err));
-    // }
+    handleTextChange(e) {
+        const val = e.target.value;
+        this.setState({
+            searchTerm: val
+        },
+            // Call API on text change
+            () => {
+                if (val === "") {
+                    this.setState({
+                        searchResults: []
+                    })
+                } else {
+                    axios
+                        .get(
+                        `${this.state.apiUrl}?api_key=${this.state.apiKey}&language=en-US&query=${val}`
+                        )
+                        .then(res => this.setState({ searchResults: res.data.results }))
+                        .catch(err => console.log(err));
+                }
+            });
+    };
+
     render() {
-        // const { initialMovieList} = this.state;
-        // console.log({initialMovieList});
+        const { searchResults} = this.state;
+        console.log({ searchResults});
 
         // Map over search results & return data
-        // let movieListMapped = initialMovieList.map((item, index) => {
-        //     return (
-        //         <Col xs={24} sm={12} md={6} key={index}>
-        //             <MovieCard
-        //                 id={item.id}
-        //                 image={item.poster_path}
-        //                 title={item.title}
-        //                 description={item.overview}
-        //                 releaseDate={item.release_date}
-        //             />
-        //         </Col>
-        //     );
-        // });
+        let searchResultsMapped = searchResults.map((item, index) => {
+            return (
+                <Col xs={24} key={index}>
+                    <MovieCard
+                        id={item.id}
+                        image={item.poster_path}
+                        title={item.title}
+                        description={item.overview}
+                        releaseDate={item.release_date}
+                    />
+                </Col>
+            );
+        });
 
         return (
             <div className="search">
-                <form>
-                    <Input
-                        placeholder="Search for a movie..."
-                    />
-                </form>
-                <div className="search__results">
-                    <Grid fluid>
-                        <Row>
-                            {/* {movieListMapped} */}
-                        </Row>
-                    </Grid>
-                </div>
+                <Grid fluid>
+                    <Row>
+                        <Col xs={24}>
+                            <form>
+                                <Input
+                                    placeholder="Search for a movie..."
+                                    onKeyUp={this.handleTextChange}
+                                />
+                            </form>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col xs={24}>
+                            <div className="search__results">
+                                <Grid fluid>
+                                    <Row>
+                                        {searchResultsMapped}
+                                    </Row>
+                                </Grid>
+                            </div>
+                        </Col>
+                    </Row>
+                </Grid>
             </div>
         )
     }
