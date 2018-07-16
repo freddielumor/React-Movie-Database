@@ -12,49 +12,26 @@ class MovieList extends Component {
             initialApiUrl: 'https://api.themoviedb.org/3/discover/movie',
             apiUrl: 'https://api.themoviedb.org/3/search/movie',
             apiKey: 'e0c15850977d1058ff053d4726ac46f1',
-            movieList: [],
-            movieListPage: 1
+            movieList: []
         };
-        // this.loadNextPage = this.loadNextPage.bind(this);
-        // this.loadPreviousPage = this.loadPreviousPage.bind(this);
     }
 
     // Populate movie list on page load
     componentDidMount() {
         axios
             .get(
-                `${this.state.initialApiUrl}?api_key=${this.state.apiKey}&language=en-US&page=${this.state.movieListPage}&include_adult=false`)
+                `${this.state.initialApiUrl}?api_key=${this.state.apiKey}&language=en-US&page=1&include_adult=false`)
             .then(res => this.setState({ movieList: res.data.results }))
             .catch(err => console.log(err))
 
     }
 
-    // loadNextPage() {
-    //     axios
-    //         .get(
-    //         `${this.state.initialApiUrl}?api_key=${this.state.apiKey}&language=en-US&page=${this.state.movieListPage + 1}&include_adult=false`
-    //         )
-    //         .then(res => this.setState({ movieList: res.data.results }))
-    //         .catch(err => console.log(err));
-    // }
-
-    // loadPreviousPage() {
-    //     axios
-    //         .get(
-    //             `${this.state.initialApiUrl}?api_key=${this.state.apiKey}&language=en-US&page=${this.state.movieListPage - 1}&include_adult=false`
-    //         )
-    //         .then(res => this.setState({ movieList: res.data.results }))
-    //         .catch(err => console.log(err));
-    // }
-
     render() {
 
-        const { movieList, movieListPage } = this.state;
+        const { movieList } = this.state;
         console.log({ movieList });
         const filteredMovieList = movieList.slice(1, 17);
         console.log({ filteredMovieList });
-        // console.log({ movieListPage });
-
 
         // Map over results & return data
         let movieListMapped = movieList.map((item, index) => {
@@ -80,39 +57,6 @@ class MovieList extends Component {
                     <Row>
                         {movieListMapped}
                     </Row>
-                    {/* <Row>
-                        <Col xs={24}>
-                            {movieListPage >= 1 &&
-                            <React.Fragment>
-                                <Button 
-                                    appearance="primary"
-                                    onClick={this.loadNextPage}
-                                >
-                                    NEXT PAGE
-                                </Button>
-
-                                <Button
-                                    appearance="primary"
-                                    onClick={this.loadPreviousPage}
-                                >
-                                    PREVIOUS PAGE
-                                </Button>
-                            </React.Fragment>
-                            }
-
-                            {movieListPage.length <= 1 &&
-                                <React.Fragment>
-
-                                    <Button
-                                        appearance="primary"
-                                onClick={this.loadNextPage}
-                                    >
-                                        NEXT PAGE
-                                </Button>
-                                </React.Fragment>
-                            }
-                        </Col>
-                    </Row> */}
                 </Grid>
             </div>
         )
