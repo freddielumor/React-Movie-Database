@@ -6,7 +6,7 @@ import {
     Row,
     Col
 } from 'rsuite';
-import './App.css';
+import './App.scss';
 
 // Components;
 import Header from './Components/Layout/Header';
