@@ -8,8 +8,10 @@ import {
 } from 'rsuite';
 import './App.css';
 
-// Components
-import DefaultLayout from './Components/Layout/DefaultLayout';
+// Components;
+import Header from './Components/Layout/Header';
+import Main from './Components/Layout/Main';
+import Footer from './Components/Layout/Footer';
 
 class App extends Component {
     constructor() {
@@ -26,7 +28,9 @@ class App extends Component {
                     <Grid>
                         <Row>
                             <Col xs={24}>
-                                <DefaultLayout />
+                                <Header />
+                                <Main />
+                                <Footer />
                             </Col>
                         </Row>
                     </Grid>
