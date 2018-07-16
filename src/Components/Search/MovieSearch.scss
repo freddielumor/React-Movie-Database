@@ -4,7 +4,8 @@
         padding: 20px 11px;
     }
     &__results {
-        background-color: #263238;
-        color: #fff;
+        background-color: transparent;
+        border: 1px solid #e5e5ea;
+        padding: 10px;
     }
 }
