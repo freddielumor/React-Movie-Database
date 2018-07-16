@@ -5,6 +5,7 @@ import './MovieSearch.scss';
 
 // Components
 import MovieCard from '../Movies/MovieCard';
+import MovieSearchCard from './MovieSearchCard';
 
 class MovieSearch extends Component {
     constructor() {
@@ -32,7 +33,7 @@ class MovieSearch extends Component {
                 } else {
                     axios
                         .get(
-                        `${this.state.apiUrl}?api_key=${this.state.apiKey}&language=en-US&query=${val}`
+                            `${this.state.apiUrl}?api_key=${this.state.apiKey}&language=en-US&query=${val}`
                         )
                         .then(res => this.setState({ searchResults: res.data.results }))
                         .catch(err => console.log(err));
@@ -41,14 +42,14 @@ class MovieSearch extends Component {
     };
 
     render() {
-        const { searchResults} = this.state;
-        console.log({ searchResults});
+        const { searchResults } = this.state;
+        console.log({ searchResults });
 
         // Map over search results & return data
         let searchResultsMapped = searchResults.map((item, index) => {
             return (
                 <Col xs={24} key={index}>
-                    <MovieCard
+                    <MovieSearchCard
                         id={item.id}
                         image={item.poster_path}
                         title={item.title}

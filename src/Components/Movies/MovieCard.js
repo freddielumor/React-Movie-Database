@@ -11,7 +11,7 @@ class MovieCard extends Component {
     }
 
     render() {
-        const {id, image, title, description, releaseDate} = this.props;
+        const { id, image, title, description, releaseDate } = this.props;
         return (
             <Link to={`/movie/${id}`} className="movie-card" id={id}>
                 <img src={`https://image.tmdb.org/t/p/w342${image}`} />

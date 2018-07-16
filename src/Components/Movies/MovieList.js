@@ -23,10 +23,10 @@ class MovieList extends Component {
     componentDidMount() {
         axios
             .get(
-            `${this.state.initialApiUrl}?api_key=${this.state.apiKey}&language=en-US&page=${this.state.movieListPage}&include_adult=false`)
+                `${this.state.initialApiUrl}?api_key=${this.state.apiKey}&language=en-US&page=${this.state.movieListPage}&include_adult=false`)
             .then(res => this.setState({ movieList: res.data.results }))
             .catch(err => console.log(err))
-        
+
     }
 
     // loadNextPage() {
@@ -54,7 +54,7 @@ class MovieList extends Component {
         const filteredMovieList = movieList.slice(1, 17);
         console.log({ filteredMovieList });
         // console.log({ movieListPage });
-        
+
 
         // Map over results & return data
         let movieListMapped = movieList.map((item, index) => {
