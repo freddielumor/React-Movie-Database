@@ -27,7 +27,6 @@ class MovieList extends Component {
     }
 
     render() {
-
         const { movieList } = this.state;
         console.log({ movieList });
         const filteredMovieList = movieList.slice(1, 17);

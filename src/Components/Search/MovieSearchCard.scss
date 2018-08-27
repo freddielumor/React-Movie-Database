@@ -2,37 +2,31 @@
 .movie-search-card {
     position: relative;
     transition: all .35s ease-out;
+    display: flex;
+    padding: 20px;
+    color: #fff;
     &:hover {
-        // background: #FFF0F5;
-        // opacity: .4;
+        background-color: #000;
+        color: #fff;
     }
     img {
-        max-width: 100%;
+        width: 100px;
+        margin-right: 20px;
+        -ms-flex-item-align: center;
+        align-self: center;
     }
     &__details {
+        display: flex;
+        flex-direction: column;
         width: 100%;
         &-title,
         &-release-date {
             font-weight: 700;
         }
-    }
-    @media (min-width:$small-up) {
-        display: flex;
-        padding: 20px;
-        img {
-            width: 100px;
-            margin-right: 20px;
-            align-self: center;
-        }
-        &__details {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            width: 100%;
-            &-title,
-            &-release-date {
-                font-weight: 700;
-            }
+        &-description {
+            display: none; // @media (min-width: $small-up) {
+            //     display: block;
+            // }
         }
     }
 }

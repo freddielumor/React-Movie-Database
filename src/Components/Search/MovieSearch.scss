@@ -4,8 +4,17 @@
         padding: 20px 11px;
     }
     &__results {
-        background-color: transparent;
+        position: relative;
+        background-color: #263238;
+        color: #fff;
         border: 1px solid #e5e5ea;
-        padding: 10px;
+        &-wrapper {
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            background-color: #263238;
+        }
     }
 }

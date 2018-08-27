@@ -4,7 +4,6 @@ import axios from 'axios';
 import './MovieSearch.scss';
 
 // Components
-import MovieCard from '../Movies/MovieCard';
 import MovieSearchCard from './MovieSearchCard';
 
 class MovieSearch extends Component {
@@ -48,7 +47,7 @@ class MovieSearch extends Component {
         // Map over search results & return data
         let searchResultsMapped = searchResults.map((item, index) => {
             return (
-                <Col xs={24} key={index}>
+                <Col key={index}>
                     <MovieSearchCard
                         id={item.id}
                         image={item.poster_path}
@@ -64,7 +63,7 @@ class MovieSearch extends Component {
             <div className="search">
                 <Grid fluid>
                     <Row>
-                        <Col xs={24}>
+                        <Col>
                             <form>
                                 <Input
                                     placeholder="Search for a movie..."
@@ -74,13 +73,17 @@ class MovieSearch extends Component {
                         </Col>
                     </Row>
                     <Row>
-                        <Col xs={24}>
+                        <Col>
                             <div className="search__results">
-                                <Grid fluid>
-                                    <Row>
-                                        {searchResultsMapped}
-                                    </Row>
-                                </Grid>
+                                <Row>
+                                    <Col>
+                                        <div className="search__results-wrapper">
+                                            <Row>
+                                                {searchResultsMapped}
+                                            </Row>
+                                        </div>
+                                    </Col>
+                                </Row>
                             </div>
                         </Col>
                     </Row>
