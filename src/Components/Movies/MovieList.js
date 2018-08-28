@@ -28,9 +28,7 @@ class MovieList extends Component {
 
     render() {
         const { movieList } = this.state;
-        console.log({ movieList });
         const filteredMovieList = movieList.slice(1, 17);
-        console.log({ filteredMovieList });
 
         // Map over results & return data
         let movieListMapped = movieList.map((item, index) => {
