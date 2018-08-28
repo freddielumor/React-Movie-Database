@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-import {
-    Grid,
-    Row,
-    Col
-} from 'rsuite';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Grid, Row, Col } from 'rsuite';
 import './App.scss';
 
 // Containers
 import HomePage from './Containers/HomePage/HomePage';
+import MoviePage from './Containers/MoviePage/MoviePage';
 
-// Components;
+// Components
 import Header from './Components/Layout/Header';
 import Footer from './Components/Layout/Footer';
 
@@ -32,10 +29,10 @@ class App extends Component {
                                 <Header />
                                 <Switch>
                                     <Route exact path="/"
-                                        render={(props) => <HomePage {...props} />}
+                                        render={props => <HomePage {...props} />}
                                     />
                                     <Route path="/movie/:id"
-                                        render={(props) => <Movie {...props} />}
+                                        render={props => <MoviePage {...props} />}
                                     />
                                 </Switch>
                                 <Footer />
