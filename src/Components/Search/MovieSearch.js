@@ -7,8 +7,8 @@ import './MovieSearch.scss';
 import MovieSearchCard from './MovieSearchCard';
 
 class MovieSearch extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
             searchTerm: '',
             apiUrl: 'https://api.themoviedb.org/3/search/movie',
