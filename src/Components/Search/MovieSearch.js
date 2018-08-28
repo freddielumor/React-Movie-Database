@@ -42,7 +42,6 @@ class MovieSearch extends Component {
 
     render() {
         const { searchResults } = this.state;
-        console.log({ searchResults });
 
         // Map over search results & return data
         let searchResultsMapped = searchResults.map((item, index) => {
