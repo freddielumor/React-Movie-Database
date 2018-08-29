@@ -11,38 +11,30 @@ import MoviePage from './Containers/MoviePage/MoviePage';
 import Header from './Components/Layout/Header';
 import Footer from './Components/Layout/Footer';
 
-class App extends Component {
-    constructor() {
-        super();
-
-        this.state = {
-        };
-    }
-
-    render() {
-        return (
-            <Router>
-                <div className="app">
-                    <Grid>
-                        <Row>
-                            <Col xs={24}>
-                                <Header />
-                                <Switch>
-                                    <Route exact path="/"
-                                        render={props => <HomePage {...props} />}
-                                    />
-                                    <Route path="/movie/:id"
-                                        render={props => <MoviePage {...props} />}
-                                    />
-                                </Switch>
-                                <Footer />
-                            </Col>
-                        </Row>
-                    </Grid>
-                </div>
-            </Router>
-        );
-    }
+const App = () => {
+    return (
+        <Router>
+            <div className="app">
+                <Grid>
+                    <Row>
+                        <Col xs={24}>
+                            <Header />
+                            {/* App Routes */}
+                            <Switch>
+                                <Route exact path="/"
+                                    render={props => <HomePage {...props} />}
+                                />
+                                <Route path="/movie/:id"
+                                    render={props => <MoviePage {...props} />}
+                                />
+                            </Switch>
+                            <Footer />
+                        </Col>
+                    </Row>
+                </Grid>
+            </div>
+        </Router>
+    )
 }
 
 export default App;
