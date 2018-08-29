@@ -1,11 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import {
     Grid,
     Row,
     Col,
     Nav,
-    Dropdown,
     Icon,
     Divider
 } from 'rsuite';
@@ -17,9 +16,10 @@ const Header = () => (
         <Grid>
             <Row>
                 <Col xs={24}>
-                    <h1 className="">React Movie Database</h1>
+                    <h1><a className="app__header--headline" href="/"> React Movie Database</a></h1>
+                    <p>Made by <a className="app__footer--freddie" href="https://github.com/freddielumor" target="_blank">Freddie</a></p>
                     <Divider className="app__divider" />
-                    <Nav>
+                    {/* <Nav>
                         <Nav.Item
                             icon={<Icon icon="home" />}
                             componentClass={Link}
@@ -39,7 +39,7 @@ const Header = () => (
                         >
                             Categories
                     </Nav.Item>
-                    </Nav>
+                    </Nav> */}
                 </Col>
             </Row>
         </Grid>
