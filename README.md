@@ -12,17 +12,19 @@ $ yarn start
 
 - Search movie databse
 - View movie info
+
+## Upcoming Features
+
 - View movies by genre
 - View cast
-- View trailers
+- View trailer videos
+- PWA features
 
 ## Technical Features
  
 - React
-- Redux
 - React Router
-- Material UI
+- RSuite
 - Axios
 - TMBD API Data
 - Webpack
-- ES6
