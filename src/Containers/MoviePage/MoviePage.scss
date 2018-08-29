@@ -1,7 +1,54 @@
-.movie-page__hero {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100%;
-    width: 100%;
+@import '../../Utilities/variables';
+
+.movie-page {
+    padding: 1em;
+
+    &__hero {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-top: 20vh;
+        width: 100%;
+
+        @media (min-width: $small-medium-up) and (orientation: landscape) {
+            padding-top: 40vh;
+        }
+
+        @media (min-width: $large-up) {
+            padding-top: 50vh;
+        }
+    }
+
+    &__details {
+        text-align: left;
+        display: flex;
+
+        @media (min-width: $small-medium-up) {
+            padding: 0 10%;
+            display: flex;
+
+            >div {
+                margin-left: 20px;
+            }
+        }
+
+        &--poster {
+            position: relative;
+            display: none;
+
+            @media (min-width: $small-medium-up) {
+                top: -5em;
+                display: block;
+            }
+        }
+
+        &--title {
+            font-size: 2em;
+            font-weight: 700;
+        }
+
+        &--release {}
+
+        &--description {}
+    }
 }

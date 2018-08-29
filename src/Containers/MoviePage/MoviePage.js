@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import { Grid, Row, Col } from 'rsuite';
 import './MoviePage.scss';
-
-// Components
-
 
 class MoviePage extends Component {
     constructor(props) {
@@ -23,25 +21,27 @@ class MoviePage extends Component {
         this.getMovieData = this.getMovieData.bind(this);
     }
 
+    // Get movie data
     getMovieData = () => {
-        fetch(`https://api.themoviedb.org/3/movie/${this.state.movieId}?api_key=${this.state.apiKey}&language=en-US&append_to_response=credits`)
-            .then(response => {
-                if (response.status !== 200) {
-                    console.log('Error: ' + response.status);
+        axios
+            .get(
+                `https://api.themoviedb.org/3/movie/${this.props.match.params.id}?api_key=${this.state.apiKey}&language=en-US&append_to_response=credits,videos`)
+
+            .then(res => {
+                if (res.status !== 200) {
+                    console.log('Error: ' + res.status);
                     return;
-                }
-
-                response.json().then(data => {
-                    const movie = data;
+                } else {
+                    const movie = res.data;
                     this.setState({ movie });
-                });
-
+                }
             })
             .catch(err => {
-                console.log('Fetch Error :-S', err);
+                console.log('GET Error:', err);
             })
     }
 
+    // Run get movie data function after page is rendered
     componentDidMount = () => {
         this.getMovieData();
     }
@@ -53,24 +53,31 @@ class MoviePage extends Component {
     }
 
     render() {
-        console.log(this.state.movie);
+        const { title, poster_path, release_date, overview } = this.state.movie;
+        const Background = `https://image.tmdb.org/t/p/w1280${this.state.movie.backdrop_path}`;
 
         return (
             <div className="movie-page">
                 <Grid fluid>
                     <Row>
                         <Col>
-                            <h1>{this.state.movie.title}</h1>
-                            {/* <div className="movie-page__hero" style={{ backgroundImage: `url(https://image.tmdb.org/t/p/w1280${this.state.movie.backdrop_path})` }}>
-                            </div> */}
-                            <div className="poster">
-                                <img src={this.state.movie.poster_path === null ? 'http://via.placeholder.com/300x450' : `https://image.tmdb.org/t/p/w300${this.state.movie.poster_path}`} alt={`${this.state.movie.title} poster`} className="posterImg" />
+                            <div className="movie-page__hero" style={{
+                                backgroundImage: `url(${Background})`
+                            }}></div>
+                            <div className="movie-page__details">
+                                <div className="movie-page__details--poster">
+                                    <img src={poster_path === null ? 'http://via.placeholder.com/300x450' : `https://image.tmdb.org/t/p/w185${poster_path}`} alt={`${title} poster`} />
+                                </div>
+                                <div className="movie-page__details--content">
+                                    <h1 className="movie-page__details--title">{title}</h1>
+                                    <h1 className="movie-page__details--release">{release_date}</h1>
+                                    <p className="movie-page__details--description">{overview}</p>
+                                </div>
                             </div>
-
                         </Col>
                     </Row>
                 </Grid>
-            </div>
+            </div >
         )
     }
 }
