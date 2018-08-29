@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Row, Col, Input, InputGroup } from 'rsuite';
+import { Grid, Row, Col, Input } from 'rsuite';
 import axios from 'axios';
 import './MovieSearch.scss';
 
