@@ -21,9 +21,9 @@ const App = () => {
                     <Col xs={24}>
                         <Header />
                         {/* App Routes */}
-                        <Router basename={process.env.PUBLIC_URL}>
+                        <Router>
                             <Switch>
-                                <Route exact path="/"
+                                <Route exact path="/" exact
                                     render={props => <HomePage {...props} />}
                                 />
                                 <Route path="/movie/:id"
