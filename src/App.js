@@ -21,7 +21,7 @@ const App = () => {
                     <Col xs={24}>
                         <Header />
                         {/* App Routes */}
-                        <Router>
+                        <Router basename="React-Movie-Database">
                             <Switch>
                                 <Route exact path="/" exact
                                     render={props => <HomePage {...props} />}
