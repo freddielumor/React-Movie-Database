@@ -14,13 +14,14 @@ import Footer from './Components/Layout/Footer';
 
 const App = () => {
     return (
-        <Router>
-            <div className="app">
-                <Grid>
-                    <Row>
-                        <Col xs={24}>
-                            <Header />
-                            {/* App Routes */}
+
+        <div className="app">
+            <Grid>
+                <Row>
+                    <Col xs={24}>
+                        <Header />
+                        {/* App Routes */}
+                        <Router>
                             <Switch>
                                 <Route exact path="/" exact
                                     render={props => <HomePage {...props} />}
@@ -31,12 +32,13 @@ const App = () => {
                                 <Route render={props => <ErrorPage {...props} />}
                                 />
                             </Switch>
-                            <Footer />
-                        </Col>
-                    </Row>
-                </Grid>
-            </div>
-        </Router>
+                        </Router>
+                        <Footer />
+                    </Col>
+                </Row>
+            </Grid>
+        </div>
+
     )
 }
 
