@@ -21,9 +21,9 @@ const App = () => {
                     <Col xs={24}>
                         <Header />
                         {/* App Routes */}
-                        <Router basename="React-Movie-Database">
+                        <Router basename={process.env.PUBLIC_URL}>
                             <Switch>
-                                <Route exact path="/" exact
+                                <Route exact path="/"
                                     render={props => <HomePage {...props} />}
                                 />
                                 <Route path="/movie/:id"
