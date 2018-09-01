@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Row, Col, Button } from 'rsuite';
+import { Grid, Row, Col } from 'rsuite';
 import axios from 'axios';
 
 // Components
@@ -33,9 +33,8 @@ class MovieList extends Component {
         // Map over results & return data
         let movieListMapped = movieList.map((item, index) => {
             return (
-                <Col xs={24} sm={12} md={6}>
+                <Col xs={24} sm={12} md={6} key={index}>
                     <MovieCard
-                        key={index}
                         id={item.id}
                         image={item.poster_path}
                         title={item.title}
