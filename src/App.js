@@ -23,7 +23,7 @@ const App = () => {
                         {/* App Routes */}
                         <Router>
                             <Switch>
-                                <Route exact path="/" exact
+                                <Route exact path="/"
                                     render={props => <HomePage {...props} />}
                                 />
                                 <Route path="/movie/:id"
