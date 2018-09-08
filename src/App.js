@@ -14,7 +14,6 @@ import Footer from './Components/Layout/Footer';
 
 const App = () => {
     return (
-
         <div className="app">
             <Grid>
                 <Row>

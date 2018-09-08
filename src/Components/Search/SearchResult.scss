@@ -1,27 +1,32 @@
-.movie-search-card {
+.search-result {
     position: relative;
     transition: all .35s ease-out;
     display: flex;
     padding: 20px;
     color: #fff;
+
     &:hover {
         background-color: #000;
         color: #fff;
     }
+
     img {
         width: 100px;
         margin-right: 20px;
         -ms-flex-item-align: center;
         align-self: center;
     }
+
     &__details {
         display: flex;
         flex-direction: column;
         width: 100%;
+
         &-title,
         &-release-date {
             font-weight: 700;
         }
+
         &-description {
             display: none;
         }

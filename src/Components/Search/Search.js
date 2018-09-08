@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col, Input } from 'rsuite';
 import axios from 'axios';
-import './MovieSearch.scss';
+import './Search.scss';
 
 // Components
-import MovieSearchCard from './MovieSearchCard';
+import SearchResult from './SearchResult';
 
-class MovieSearch extends Component {
+class Search extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -47,7 +47,7 @@ class MovieSearch extends Component {
         let searchResultsMapped = searchResults.map((item, index) => {
             return (
                 <Col key={index}>
-                    <MovieSearchCard
+                    <SearchResult
                         id={item.id}
                         image={item.poster_path}
                         title={item.title}
@@ -92,4 +92,4 @@ class MovieSearch extends Component {
     }
 }
 
-export default MovieSearch;
+export default Search;

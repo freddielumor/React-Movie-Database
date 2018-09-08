@@ -1,13 +1,13 @@
 import React from 'react';
 
 // Components
-import MovieSearch from '../../Components/Search/MovieSearch';
+import Search from '../../Components/Search/Search';
 import MovieList from '../../Components/Movies/MovieList';
 
 
 const HomePage = props => (
     <main className="app__homepage">
-        <MovieSearch />
+        <Search />
         <MovieList />
     </main>
 );
