@@ -20,7 +20,7 @@ class MovieList extends Component {
         // Map over results & return data
         let movieListMapped = movieList.map((item, index) => {
             return (
-                <Col xs={24} sm={12} md={6} key={index}>
+                <Col xs={12} md={6} key={index}>
                     <MovieCard
                         id={item.id}
                         image={item.poster_path}
