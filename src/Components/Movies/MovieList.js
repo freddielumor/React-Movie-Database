@@ -1,34 +1,21 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col } from 'rsuite';
-import axios from 'axios';
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux';
+import { getMovieList } from '../../Redux/Actions/movieActions';
 
 // Components
 import MovieCard from './MovieCard';
 
 class MovieList extends Component {
-    constructor() {
-        super()
-        this.state = {
-            initialApiUrl: 'https://api.themoviedb.org/3/discover/movie',
-            apiUrl: 'https://api.themoviedb.org/3/search/movie',
-            apiKey: 'e0c15850977d1058ff053d4726ac46f1',
-            movieList: []
-        };
-    }
 
     // Populate movie list on page load
     componentDidMount() {
-        axios
-            .get(
-                `${this.state.initialApiUrl}?api_key=${this.state.apiKey}&language=en-US&page=1&include_adult=false`)
-            .then(res => this.setState({ movieList: res.data.results }))
-            .catch(err => console.log(err))
-
+        this.props.getMovieList();
     }
 
     render() {
-        const { movieList } = this.state;
-        const filteredMovieList = movieList.slice(1, 17);
+        const { movieList } = this.props;
 
         // Map over results & return data
         let movieListMapped = movieList.map((item, index) => {
@@ -60,4 +47,12 @@ class MovieList extends Component {
     }
 }
 
-export default MovieList;
+const mapDispatchToProps = dispatch => bindActionCreators({
+    getMovieList
+}, dispatch);
+
+const mapStateToProps = state => ({
+    movieList: state.movies.movieList
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(MovieList);
