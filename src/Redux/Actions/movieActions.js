@@ -10,4 +10,5 @@ export const getMovieList = () => dispatch => {
                 type: GET_MOVIE_LIST,
                 payload: movieList.data.results
             }))
+        .catch(err => console.log(err));
 }
