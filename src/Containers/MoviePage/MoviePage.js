@@ -1,61 +1,41 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import { Grid, Row, Col } from 'rsuite';
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux';
+import { getMovieData } from '../../Redux/Actions/getMovieDataAction';
 import './MoviePage.scss';
 
 class MoviePage extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            apiUrl: 'https://api.themoviedb.org/3/movie',
-            apiKey: 'e0c15850977d1058ff053d4726ac46f1',
-            movieId: window.location.pathname.substring(7),
-            movie: {
-                genres: [],
-                credits: {
-                    cast: [],
-                    crew: []
-                }
-            }
+            movieId: ''
         };
-        this.getMovieData = this.getMovieData.bind(this);
     }
 
-    // Get movie data
-    getMovieData = () => {
-        axios
-            .get(
-                `https://api.themoviedb.org/3/movie/${this.props.match.params.id}?api_key=${this.state.apiKey}&language=en-US&append_to_response=credits,videos`)
-
-            .then(res => {
-                if (res.status !== 200) {
-                    console.log('Error: ' + res.status);
-                    return;
-                } else {
-                    const movie = res.data;
-                    this.setState({ movie });
-                }
-            })
-            .catch(err => {
-                console.log('GET Error:', err);
-            })
+    // 1. Get movie id when page is loaded
+    componentDidMount() {
+        this.getMovieId(this.props.match.params.id);
     }
 
-    // Run get movie data function after page is rendered
-    componentDidMount = () => {
-        this.getMovieData();
-    }
-
-    componentWillReceiveProps = (nextProps) => {
-        if (nextProps.movie !== this.state.movie) {
-            this.getMovieData();
+    componentWillReceiveProps = (nextProps, movieId) => {
+        if (nextProps.movie !== this.props.movie) {
+            this.props.getMovieData(movieId)
         }
     }
 
-    render() {
-        const { title, poster_path, release_date, overview } = this.state.movie;
-        const Background = `https://image.tmdb.org/t/p/w1280${this.state.movie.backdrop_path}`;
+    // 2. Set the movie id to state then run get movie data action
+    getMovieId = movieId => {
+        this.setState({
+            movieId: movieId
+        }, () => {
+            this.props.getMovieData(movieId)
+        });
+    }
 
+    render() {
+        const { title, poster_path, release_date, overview } = this.props.movie;
+        const Background = `https://image.tmdb.org/t/p/w1280${this.props.movie.backdrop_path}`;
         return (
             <div className="movie-page">
                 <Grid fluid>
@@ -82,4 +62,12 @@ class MoviePage extends Component {
     }
 }
 
-export default MoviePage;
+const mapDispatchToProps = dispatch => bindActionCreators({
+    getMovieData
+}, dispatch);
+
+const mapStateToProps = state => ({
+    movie: state.movieData.movie
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(MoviePage);
