@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Grid, Row, Col } from 'rsuite';
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux';
-import { getMovieList } from '../../Redux/Actions/movieActions';
+import { getMovieList } from '../../Redux/Actions/getMovieListAction';
 
 // Components
 import MovieCard from './MovieCard';
@@ -52,7 +52,7 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 }, dispatch);
 
 const mapStateToProps = state => ({
-    movieList: state.movies.movieList
+    movieList: state.movieList.movieList
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(MovieList);
