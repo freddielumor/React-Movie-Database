@@ -23,6 +23,7 @@ $ yarn start
 ## Technical Features
  
 - React
+- Redux
 - React Router
 - RSuite
 - Axios
