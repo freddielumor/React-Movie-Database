@@ -9,29 +9,31 @@ class MoviePage extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            movieId: ''
+            movieId: this.props.match.params.id
         };
     }
 
+
     // 1. Get movie id when page is loaded
     componentDidMount() {
-        this.getMovieId(this.props.match.params.id);
+        // this.getMovieId(this.props.match.params.id);
+        this.props.getMovieData(`https://api.themoviedb.org/3/movie/${this.state.movieId}?api_key=e0c15850977d1058ff053d4726ac46f1&language=en-US&append_to_response=credits,videos`)
     }
 
     componentWillReceiveProps = (nextProps, movieId) => {
         if (nextProps.movie !== this.props.movie) {
-            this.props.getMovieData(movieId)
+            this.props.getMovieData(this.state.movieId)
         }
     }
 
     // 2. Set the movie id to state then run get movie data action
-    getMovieId = movieId => {
-        this.setState({
-            movieId: movieId
-        }, () => {
-            this.props.getMovieData(movieId)
-        });
-    }
+    // getMovieId = movieId => {
+    //     this.setState({
+    //         movieId: movieId
+    //     }, () => {
+    //         this.props.getMovieData(`https://api.themoviedb.org/3/movie/${movieId}?api_key=e0c15850977d1058ff053d4726ac46f1&language=en-US&append_to_response=credits,videos`)
+    //     });
+    // }
 
     render() {
         const { title, poster_path, release_date, overview } = this.props.movie;
