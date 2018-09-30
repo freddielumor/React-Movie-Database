@@ -51,4 +51,10 @@
 
         &--description {}
     }
+
+    &__cast {
+        .swiper-slide {
+            text-align: center;
+        }
+    }
 }
