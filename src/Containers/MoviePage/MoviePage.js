@@ -13,25 +13,22 @@ class MoviePage extends Component {
         };
     }
 
-    // 1. Get movie id when page is loaded
+    // Get movie id when page is loaded
     componentDidMount() {
-        this.getMovieId(this.props.match.params.id);
-    }
-
-    componentWillReceiveProps = (nextProps, movieId) => {
-        if (nextProps.movie !== this.props.movie) {
-            this.props.getMovieData(movieId)
-        }
-    }
-
-    // 2. Set the movie id to state then run get movie data action
-    getMovieId = movieId => {
+        const movieId = this.props.match.params.id;
         this.setState({
             movieId: movieId
         }, () => {
             this.props.getMovieData(movieId)
         });
     }
+
+    // componentWillReceiveProps = (nextProps, movieId) => {
+    //     if (nextProps.movie !== this.props.movie) {
+    //         // this.props.getMovieData(movieId)
+    //         console.log('get data')
+    //     }
+    // }
 
     render() {
         const { title, poster_path, release_date, overview } = this.props.movie;
