@@ -26,7 +26,7 @@
     "bugs": {
         "url": "https://github.com/freddielumor/React-Movie-Database/issues"
     },
-    "homepage": "https://freddielumor.github.io/React-Movie-Database/",
+    "homepage": "https://freddielumor.github.io/React-Movie-Database",
     "dependencies": {
         "axios": "^0.18.0",
         "react": "^16.3.2",
