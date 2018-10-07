@@ -6,8 +6,9 @@ import { getMovieData } from '../../Redux/Actions/getMovieDataAction';
 import './MoviePage.scss';
 
 // Components
-import MovieCast from '../../Components/Movies/MovieCast';
 import Swiper from 'react-id-swiper';
+import MovieCast from '../../Components/Movies/MovieCast';
+
 
 class MoviePage extends Component {
     constructor(props) {
@@ -15,9 +16,7 @@ class MoviePage extends Component {
         this.state = {
             movieId: ''
         };
-        this.goNext = this.goNext.bind(this);
-        this.goPrev = this.goPrev.bind(this);
-        this.swiper = null;
+        // this.swiper = null;
     }
 
     // Get movie id when page is loaded
@@ -37,13 +36,13 @@ class MoviePage extends Component {
     //     }
     // }
 
-    goNext() {
-        if (this.swiper) this.swiper.slideNext()
-    }
+    // goNext = () => {
+    //     if (this.swiper) this.swiper.slideNext()
+    // }
 
-    goPrev() {
-        if (this.swiper) this.swiper.slidePrev()
-    }
+    // goPrev = () => {
+    //     if (this.swiper) this.swiper.slidePrev()
+    // }
 
     render() {
 
@@ -56,10 +55,11 @@ class MoviePage extends Component {
         console.log({ credits });
 
         const params = {
-            slidesPerView: 3,
-            spaceBetween: 10,
+            slidesPerView: 4,
+            spaceBetween: 40,
             pagination: {
                 el: '.swiper-pagination',
+                type: 'bullets',
                 clickable: true,
             },
             navigation: {
@@ -67,6 +67,10 @@ class MoviePage extends Component {
                 prevEl: '.swiper-button-prev'
             },
             breakpoints: {
+                1000: {
+                    slidesPerView: 3,
+                    spaceBetween: 30
+                },
                 600: {
                     slidesPerView: 2,
                     spaceBetween: 20
@@ -78,26 +82,27 @@ class MoviePage extends Component {
             }
         };
 
-        let movieCast = [];
+        let movieCastMapped = [];
         if (credits !== undefined || null) {
             credits.cast.slice(0, 10).map((item, index) => {
-                movieCast.push(
-                    <div key={index}>
-                        <img src={`https://image.tmdb.org/t/p/w185${item.profile_path}`} alt={`${item.name} image`} />
-                        <p>{item.name}</p>
-                        <p>{item.character}</p>
-                    </div>
+                movieCastMapped.push(
+                    <Col xs={24} key={index}>
+                        <MovieCast
+                            id={item.id}
+                            name={item.name}
+                            character={item.character}
+                            profile_path={item.profile_path}
+                        />
+                    </Col>
                 )
             });
         }
-
-        // console.log({ movieCast });
 
         return (
             <div className="movie-page">
                 <Grid fluid>
                     <Row>
-                        <Col>
+                        <Col xs={24}>
                             <div className="movie-page__hero" style={{
                                 backgroundImage: `url(${Background})`
                             }}></div>
@@ -111,16 +116,20 @@ class MoviePage extends Component {
                                     <p className="movie-page__details--description">{overview}</p>
                                 </div>
                             </div>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col xs={24}>
                             <div className="movie-page__cast">
                                 <h2>Cast</h2>
                                 <Swiper {...params}>
-                                    {movieCast}
+                                    {movieCastMapped}
                                 </Swiper>
                             </div>
                         </Col>
                     </Row>
                 </Grid>
-            </div >
+            </div>
         )
     }
 }
