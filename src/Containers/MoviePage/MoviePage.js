@@ -83,7 +83,7 @@ class MoviePage extends Component {
         };
 
         let movieCastMapped = [];
-        if (credits !== undefined || null) {
+        if (credits !== undefined) {
             credits.cast.slice(0, 10).map((item, index) => {
                 movieCastMapped.push(
                     <Col xs={24} key={index}>
@@ -104,7 +104,7 @@ class MoviePage extends Component {
                     <Row>
                         <Col xs={24}>
                             <div className="movie-page__hero" style={{
-                                backgroundImage: `url(${Background})`
+                                backgroundImage: `url(${Background === null ? 'http://via.placeholder.com/300x450' : Background})`
                             }}></div>
                             <div className="movie-page__details">
                                 <div className="movie-page__details--poster">

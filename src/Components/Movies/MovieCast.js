@@ -11,7 +11,7 @@ class MovieCast extends Component {
 
         return (
             <div className="movie-cast swiper-slide" id={id}>
-                <img src={`https://image.tmdb.org/t/p/w185${profile_path}`} alt={`${name} image`} />
+                <img src={profile_path === null ? 'http://via.placeholder.com/300x450' : `https://image.tmdb.org/t/p/w185${profile_path}`} alt={`${name} image`} />
                 <p>{name}</p>
                 <p>{character}</p>
             </div>
