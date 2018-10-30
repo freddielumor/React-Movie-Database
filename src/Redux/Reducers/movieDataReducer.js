@@ -9,21 +9,16 @@ export default function (state = initialState, action) {
         case GET_MOVIE_DATA_REQUEST:
             return {
                 ...state,
-                requestingMovieData: true,
-                requestingMovieDataSuccess: false,
-                requestingMovieDataError: false
+                requestingMovieData: true
             }
         case GET_MOVIE_DATA_SUCCESS:
             return {
                 ...state,
-                requestingMovieData: false,
-                movie: action.payload,
-                requestingMovieDataError: false
+                movie: action.payload
             }
         case GET_MOVIE_DATA_ERROR:
             return {
                 ...state,
-                requestingMovieData: false,
                 requestingMovieDataError: action.payload
             }
         default:
