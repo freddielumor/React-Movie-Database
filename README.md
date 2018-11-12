@@ -12,12 +12,12 @@ $ yarn start
 
 - Search movie databse
 - View movie info
+- View cast
+- View trailer videos
 
 ## Upcoming Features
 
 - View movies by genre
-- View cast
-- View trailer videos
 - PWA features
 
 ## Technical Features
