@@ -51,28 +51,6 @@
     }
 
     &__cast {
-        padding: 1em 0;
-
-        .swiper-container-horizontal {
-            padding-bottom: 5em;
-
-            >.swiper-pagination-bullets {
-                .swiper-pagination-bullet {
-                    background: #fff;
-                    height: 10px;
-                    width: 10px;
-                }
-            }
-
-            .swiper-button-prev,
-            .swiper-button-next {
-                top: 40%;
-                // background: #fff;
-            }
-        }
-
-        .swiper-slide {
-            text-align: center;
-        }
+        margin: 2em 0;
     }
 }

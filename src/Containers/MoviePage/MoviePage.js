@@ -6,7 +6,6 @@ import { getMovieData } from '../../Redux/Actions/getMovieDataAction';
 import './MoviePage.scss';
 
 // Components
-import Swiper from 'react-id-swiper';
 import MovieCast from '../../Components/Movies/MovieCast';
 
 
@@ -16,7 +15,6 @@ class MoviePage extends Component {
         this.state = {
             movieId: ''
         };
-        // this.swiper = null;
     }
 
     // Get movie id when page is loaded
@@ -36,14 +34,6 @@ class MoviePage extends Component {
     //     }
     // }
 
-    // goNext = () => {
-    //     if (this.swiper) this.swiper.slideNext()
-    // }
-
-    // goPrev = () => {
-    //     if (this.swiper) this.swiper.slidePrev()
-    // }
-
     render() {
 
         const { movie } = this.props;
@@ -54,39 +44,11 @@ class MoviePage extends Component {
         console.log({ movie });
         console.log({ credits });
 
-        const params = {
-            slidesPerView: 4,
-            spaceBetween: 40,
-            pagination: {
-                el: '.swiper-pagination',
-                type: 'bullets',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev'
-            },
-            breakpoints: {
-                1000: {
-                    slidesPerView: 3,
-                    spaceBetween: 30
-                },
-                600: {
-                    slidesPerView: 2,
-                    spaceBetween: 20
-                },
-                480: {
-                    slidesPerView: 1,
-                    spaceBetween: 10
-                }
-            }
-        };
-
         let movieCastMapped = [];
         if (credits !== undefined) {
-            credits.cast.slice(0, 10).map((item, index) => {
+            credits.cast.slice(0, 6).map((item, index) => {
                 movieCastMapped.push(
-                    <Col xs={24} key={index}>
+                    <Col xs={12} sm={6} md={4} key={index}>
                         <MovieCast
                             id={item.id}
                             name={item.name}
@@ -122,9 +84,9 @@ class MoviePage extends Component {
                         <Col xs={24}>
                             <div className="movie-page__cast">
                                 <h2>Cast</h2>
-                                <Swiper {...params}>
+                                <Row>
                                     {movieCastMapped}
-                                </Swiper>
+                                </Row>
                             </div>
                         </Col>
                     </Row>
