@@ -7,6 +7,7 @@ import './MoviePage.scss';
 
 // Components
 import MovieCast from '../../Components/Movies/MovieCast';
+import MovieTrailer from '../../Components/Movies/MovieTrailer';
 
 
 class MoviePage extends Component {
@@ -37,13 +38,14 @@ class MoviePage extends Component {
     render() {
 
         const { movie } = this.props;
-        const { title, poster_path, release_date, overview } = this.props.movie;
-        const { credits } = this.props.movie;
+        const { title, poster_path, release_date, overview, credits, videos } = this.props.movie;
         const Background = `https://image.tmdb.org/t/p/w1280${this.props.movie.backdrop_path}`;
 
         console.log({ movie });
         console.log({ credits });
+        console.log({ videos });
 
+        // Map & Return Cast Data
         let movieCastMapped = [];
         if (credits !== undefined) {
             credits.cast.slice(0, 6).map((item, index) => {
@@ -54,6 +56,21 @@ class MoviePage extends Component {
                             name={item.name}
                             character={item.character}
                             profile_path={item.profile_path}
+                        />
+                    </Col>
+                )
+            });
+        }
+
+        // Map & Return Trailers
+        let movieTrailersMapped = [];
+        if (videos !== undefined) {
+            videos.results.slice(0, 2).map((item, index) => {
+                movieTrailersMapped.push(
+                    <Col xs={24} md={12} key={index}>
+                        <MovieTrailer
+                            id={item.id}
+                            videoId={item.key}
                         />
                     </Col>
                 )
@@ -86,6 +103,16 @@ class MoviePage extends Component {
                                 <h2>Cast</h2>
                                 <Row>
                                     {movieCastMapped}
+                                </Row>
+                            </div>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col xs={24}>
+                            <div className="movie-page__trailer">
+                                <h2>Trailers</h2>
+                                <Row>
+                                    {movieTrailersMapped}
                                 </Row>
                             </div>
                         </Col>
