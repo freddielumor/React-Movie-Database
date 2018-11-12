@@ -28,22 +28,11 @@ class MoviePage extends Component {
         });
     }
 
-    // componentWillReceiveProps = (nextProps, movieId) => {
-    //     if (nextProps.movie !== this.props.movie) {
-    //         // this.props.getMovieData(movieId)
-    //         console.log('get data')
-    //     }
-    // }
-
     render() {
 
         const { movie } = this.props;
         const { title, poster_path, release_date, overview, credits, videos } = this.props.movie;
         const Background = `https://image.tmdb.org/t/p/w1280${this.props.movie.backdrop_path}`;
-
-        console.log({ movie });
-        console.log({ credits });
-        console.log({ videos });
 
         // Map & Return Cast Data
         let movieCastMapped = [];
