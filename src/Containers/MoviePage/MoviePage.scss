@@ -1,10 +1,8 @@
 @import '../../Utilities/variables';
 
 .movie-page {
-    padding: 1em;
-
     &__hero {
-        background-position: center;
+        background-position: center 0;
         background-repeat: no-repeat;
         background-size: cover;
         padding-top: 20vh;
@@ -50,5 +48,9 @@
         &--release {}
 
         &--description {}
+    }
+
+    &__cast {
+        margin: 2em 0;
     }
 }

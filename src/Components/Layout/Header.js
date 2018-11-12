@@ -10,6 +10,9 @@ import {
 } from 'rsuite';
 import './Header.scss';
 
+// Components
+import Search from '../../Components/Search/Search';
+
 
 const Header = () => (
     <header className="app__header">
@@ -19,6 +22,7 @@ const Header = () => (
                     <h1><a className="app__header--headline" href="/"> React Movie Database</a></h1>
                     <p>Made by <a className="app__footer--freddie" href="https://github.com/freddielumor" target="_blank">Freddie</a></p>
                     <Divider className="app__divider" />
+                    {/* <Search /> */}
                     {/* <Nav>
                         <Nav.Item
                             icon={<Icon icon="home" />}

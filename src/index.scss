@@ -1,5 +1,6 @@
 @import './Utilities/normalize';
 @import './Utilities/rsuite';
+@import './Utilities/swiper';
 
 html,
 body {
@@ -25,4 +26,8 @@ a {
     &:hover {
         text-decoration: none;
     }
+}
+
+img {
+    max-width: 100%;
 }
