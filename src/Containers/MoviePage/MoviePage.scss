@@ -53,4 +53,12 @@
     &__cast {
         margin: 2em 0;
     }
+
+    &__trailer {
+
+        // Make Youtube vides responsive
+        iframe {
+            width: 100%;
+        }
+    }
 }
