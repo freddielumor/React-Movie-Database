@@ -12,7 +12,7 @@ class MovieCast extends Component {
         return (
             <figure className="movie-cast" id={id}>
                 <img src={profile_path === null ? 'http://via.placeholder.com/300x450' : `https://image.tmdb.org/t/p/w185${profile_path}`} alt={`${name} image`} />
-                <figcaption>{name}</figcaption>
+                <figcaption className="movie-cast__actor-name">{name}</figcaption>
                 <figcaption>{character}</figcaption>
             </figure>
         )
