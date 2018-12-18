@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { Grid, Row, Col } from 'rsuite';
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux';
@@ -76,6 +77,7 @@ class MoviePage extends Component {
                 <Grid fluid>
                     <Row>
                         <Col xs={24}>
+                            <h4 className="movie-page__back-btn"><a href="/#/">BACK</a></h4>
                             <div className="movie-page__hero" style={{
                                 backgroundImage: `url(${Background === null ? 'http://via.placeholder.com/300x450' : Background})`
                             }}></div>
