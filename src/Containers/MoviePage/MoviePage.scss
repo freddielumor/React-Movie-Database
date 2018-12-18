@@ -5,8 +5,12 @@
         background-position: center 0;
         background-repeat: no-repeat;
         background-size: cover;
-        padding-top: 20vh;
+        padding-top: 30vh;
         width: 100%;
+
+        @media (orientation: landscape) {
+            padding-top: 100vh;
+        }
 
         @media (min-width: $small-medium-up) and (orientation: landscape) {
             padding-top: 40vh;
@@ -33,6 +37,10 @@
         &--poster {
             position: relative;
             display: none;
+
+            img {
+                max-width: initial;
+            }
 
             @media (min-width: $small-medium-up) {
                 top: -5em;
