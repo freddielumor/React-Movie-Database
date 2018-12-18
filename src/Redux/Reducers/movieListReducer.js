@@ -1,20 +1,21 @@
 import { GET_MOVIE_LIST_REQUEST, GET_MOVIE_LIST_SUCCESS, GET_MOVIE_LIST_ERROR } from '../Actions/types';
 
 const initialState = {
-    movieList: []
+    movies: [],
+    moviesLoaded: false
 }
 
 export default function (state = initialState, action) {
     switch (action.type) {
         case GET_MOVIE_LIST_REQUEST:
             return {
-                ...state,
-                requestingMovieList: true
+                ...state
             }
         case GET_MOVIE_LIST_SUCCESS:
             return {
                 ...state,
-                movieList: action.payload
+                movies: action.payload,
+                moviesLoaded: true
             }
         case GET_MOVIE_LIST_ERROR:
             return {

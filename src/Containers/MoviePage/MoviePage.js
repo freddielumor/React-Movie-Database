@@ -3,6 +3,7 @@ import { Grid, Row, Col } from 'rsuite';
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux';
 import { getMovieData } from '../../Redux/Actions/getMovieDataAction';
+import { resetMovieData } from '../../Redux/Actions/resetMovieDataAction';
 import './MoviePage.scss';
 
 // Components
@@ -26,6 +27,10 @@ class MoviePage extends Component {
         }, () => {
             this.props.getMovieData(movieId)
         });
+    }
+
+    componentWillUnmount() {
+        this.props.resetMovieData();
     }
 
     render() {
@@ -113,11 +118,13 @@ class MoviePage extends Component {
 }
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-    getMovieData
+    getMovieData,
+    resetMovieData
 }, dispatch);
 
 const mapStateToProps = state => ({
-    movie: state.movieData.movie
+    movie: state.movieData.movie,
+    isLoaded: state.movieData.movieLoaded
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(MoviePage);

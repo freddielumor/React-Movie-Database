@@ -9,16 +9,24 @@ import MovieCard from './MovieCard';
 
 class MovieList extends Component {
 
-    // Populate movie list on page load
     componentDidMount() {
-        this.props.getMovieList('https://api.themoviedb.org/3/discover/movie?api_key=e0c15850977d1058ff053d4726ac46f1&language=en-US&page=1&include_adult=false');
+        // Get movies if not already loaded
+        if (!this.props.isLoaded) {
+            this.props.getMovieList('https://api.themoviedb.org/3/discover/movie?api_key=e0c15850977d1058ff053d4726ac46f1&language=en-US&page=1&include_adult=false');
+            console.log("Movies loaded")
+        }
     }
 
     render() {
-        const { movieList } = this.props;
+        const { movies, isLoaded } = this.props;
+
+        // Movie Loading State
+        if (!isLoaded) {
+            <h1>Loading....</h1>
+        }
 
         // Map over results & return data
-        let movieListMapped = movieList.map((item, index) => {
+        let movieListMapped = movies.map((item, index) => {
             return (
                 <Col xs={12} md={6} key={index}>
                     <MovieCard
@@ -52,7 +60,8 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 }, dispatch);
 
 const mapStateToProps = state => ({
-    movieList: state.movieList.movieList
+    movies: state.movieList.movies,
+    isLoaded: state.movieList.moviesLoaded
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(MovieList);
