@@ -20,30 +20,8 @@ const Header = () => (
             <Row>
                 <Col xs={24}>
                     <h1><a className="app__header--headline" href="/#/"> React Movie Database</a></h1>
-                    <p>Made by <a className="app__footer--freddie" href="https://github.com/freddielumor" target="_blank">Freddie</a></p>
+                    <p>Made by <a className="app__header--freddie" href="https://github.com/freddielumor" target="_blank">Freddie</a></p>
                     <Divider className="app__divider" />
-                    {/* <Search /> */}
-                    {/* <Nav>
-                        <Nav.Item
-                            icon={<Icon icon="home" />}
-                            componentClass={Link}
-                            to="/"
-                        >
-                            Home
-                    </Nav.Item>
-                        <Nav.Item
-                            componentClass={Link}
-                            to="/new-releases"
-                        >
-                            New
-                    </Nav.Item>
-                        <Nav.Item
-                            componentClass={Link}
-                            to="/categories"
-                        >
-                            Categories
-                    </Nav.Item>
-                    </Nav> */}
                 </Col>
             </Row>
         </Grid>
