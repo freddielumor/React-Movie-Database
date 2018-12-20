@@ -15,11 +15,10 @@ class Search extends Component {
             apiKey: 'e0c15850977d1058ff053d4726ac46f1',
             searchResults: []
         };
-        this.handleTextChange = this.handleTextChange.bind(this);
     }
 
-    handleTextChange(e) {
-        const val = e.target.value;
+    handleTextChange = e => {
+        const val = e;
         this.setState({
             searchTerm: val
         },
@@ -28,7 +27,7 @@ class Search extends Component {
                 if (val === "") {
                     this.setState({
                         searchResults: []
-                    })
+                    });
                 } else {
                     axios
                         .get(
@@ -39,6 +38,17 @@ class Search extends Component {
                 }
             });
     };
+
+    // Clear Search Input on Esc key press
+    handleClearTextField = e => {
+        if (e.keyCode === 27) {
+            this.setState({
+                searchResults: [],
+                searchTerm: ""
+            });
+        }
+    }
+
 
     render() {
         const { searchResults } = this.state;
@@ -66,7 +76,9 @@ class Search extends Component {
                             <form>
                                 <Input
                                     placeholder="Search for a movie..."
-                                    onKeyUp={this.handleTextChange}
+                                    onChange={e => this.handleTextChange(e)}
+                                    onKeyDown={e => this.handleClearTextField(e)}
+                                    value={this.state.searchTerm}
                                 />
                             </form>
                         </Col>
