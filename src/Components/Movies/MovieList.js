@@ -13,7 +13,6 @@ class MovieList extends Component {
         // Get movies if not already loaded
         if (!this.props.isLoaded) {
             this.props.getMovieList('https://api.themoviedb.org/3/discover/movie?api_key=e0c15850977d1058ff053d4726ac46f1&language=en-US&page=1&include_adult=false');
-            console.log("Movies loaded")
         }
     }
 
