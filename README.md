@@ -10,7 +10,7 @@ $ yarn start
 ```
 ## App Features
 
-- Search movie databse
+- Search movie database
 - View movie info
 - View cast
 - View trailer videos
