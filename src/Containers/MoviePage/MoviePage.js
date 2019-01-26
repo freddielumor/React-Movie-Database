@@ -77,7 +77,7 @@ class MoviePage extends Component {
                 <Grid fluid>
                     <Row>
                         <Col xs={24}>
-                            <h4 className="movie-page__back-btn"><a href="/#/">BACK</a></h4>
+                            <h4 className="movie-page__back-btn"><a href="/">BACK</a></h4>
                             <div className="movie-page__hero" style={{
                                 backgroundImage: `url(${Background === null ? 'http://via.placeholder.com/300x450' : Background})`
                             }}></div>
