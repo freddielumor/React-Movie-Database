@@ -7,7 +7,7 @@ module.exports = {
     output: {
         path: __dirname + '/public',
         publicPath: '',
-        filename: 'bundle.js'
+        filename: '[name].[chunkhash].js'
     },
     mode: 'development',
     module: {
