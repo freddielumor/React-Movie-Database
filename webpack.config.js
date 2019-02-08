@@ -9,7 +9,7 @@ module.exports = {
     output: {
         path: __dirname + '/public',
         publicPath: '',
-        filename: '[name].[hash].js'
+        filename: '[name].[chukhash].js'
     },
     mode: 'development',
     module: {
@@ -22,7 +22,7 @@ module.exports = {
             {
                 test: /\.scss$/,
                 exclude: /node_modules/,
-                use: ['style-loader', 'css-loader', 'sass-loader']
+                use: ['style-loader', MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
             },
             {
                 test: /\.(png|jpg|gif)$/,
@@ -41,7 +41,7 @@ module.exports = {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: "style.[hash].css"
+            filename: "main.[contenthash].css"
         }),
         new HtmlWebpackPlugin({
             inject: false,
