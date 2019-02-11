@@ -3,15 +3,15 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const WebpackMd5Hash = require("webpack-md5-hash");
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
     entry: './src/index.js',
     output: {
-        path: __dirname + '/public',
+        path: path.resolve(__dirname, 'public'),
         publicPath: '',
         filename: '[name].[hash].js'
     },
-    mode: 'development',
     module: {
         rules: [
             {
@@ -22,7 +22,7 @@ module.exports = {
             {
                 test: /\.scss$/,
                 exclude: /node_modules/,
-                use: ['style-loader', 'css-loader', 'sass-loader']
+                use: ['style-loader', MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
             },
             {
                 test: /\.(png|jpg|gif)$/,
@@ -40,8 +40,9 @@ module.exports = {
         compress: true
     },
     plugins: [
+        new CleanWebpackPlugin('public', {}),
         new MiniCssExtractPlugin({
-            filename: "style.[hash].css"
+            filename: "main.[hash].css"
         }),
         new HtmlWebpackPlugin({
             inject: false,

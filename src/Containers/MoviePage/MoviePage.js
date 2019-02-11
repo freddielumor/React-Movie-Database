@@ -96,7 +96,7 @@ class MoviePage extends Component {
                     <Row>
                         <Col xs={24}>
                             <div className="movie-page__cast">
-                                <h2>Cast</h2>
+                                <h2>Casts</h2>
                                 <Row>
                                     {movieCastMapped}
                                 </Row>
