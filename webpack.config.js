@@ -10,7 +10,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'public'),
         publicPath: '',
-        filename: '[name].[hash].js'
+        filename: '[name].[chukhash].js'
     },
     module: {
         rules: [
