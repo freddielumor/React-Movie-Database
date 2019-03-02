@@ -17,11 +17,12 @@ class MovieList extends Component {
     }
 
     render() {
+        console.log({ movies }, { isLoaded })
         const { movies, isLoaded } = this.props;
 
         // Movie Loading State
         if (!isLoaded) {
-            <h1>Loading....</h1>
+            return <h1 style={{ color: '#fff' }}>Loading...</h1>
         }
 
         // Map over results & return data
