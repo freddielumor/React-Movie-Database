@@ -2,10 +2,11 @@ import { GET_MOVIE_LIST_REQUEST, GET_MOVIE_LIST_SUCCESS, GET_MOVIE_LIST_ERROR } 
 import axios from 'axios';
 
 export function getMovieList(url) {
-    return dispatch => {
+    return async dispatch => {
+
         dispatch({ type: GET_MOVIE_LIST_REQUEST });
-        return axios
-            .get(url)
+
+        let result = await axios.get(url)
             .then(function (response) {
                 if (response) {
                     dispatch({
@@ -18,6 +19,7 @@ export function getMovieList(url) {
                         payload: 'There was a problem fetching the movie list.'
                     });
                 }
+                return result
             })
             .catch(function (err) {
                 dispatch({ type: GET_MOVIE_LIST_ERROR, payload: err });
