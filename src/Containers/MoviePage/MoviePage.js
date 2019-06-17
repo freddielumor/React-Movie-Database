@@ -16,7 +16,7 @@ class MoviePage extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            movieId: ''
+            movieId: null
         };
     }
 
@@ -30,47 +30,48 @@ class MoviePage extends Component {
         });
     }
 
+    // Reset movie data when leaving page
     componentWillUnmount() {
         this.props.resetMovieData();
     }
 
     render() {
-
-        const { movie } = this.props;
+        const { movie, isLoaded } = this.props;
         const { title, poster_path, release_date, overview, credits, videos } = this.props.movie;
         const Background = `https://image.tmdb.org/t/p/w1280${this.props.movie.backdrop_path}`;
 
+        // Set page loading state while awaiting data
+        if (!isLoaded) {
+            return <h1 style={{ color: '#fff' }}>Loading...</h1>
+        }
+
         // Map & Return Cast Data
         let movieCastMapped = [];
-        if (credits !== undefined) {
-            credits.cast.slice(0, 6).map((item, index) => {
-                movieCastMapped.push(
-                    <Col xs={12} sm={6} md={4} key={index}>
-                        <MovieCast
-                            id={item.id}
-                            name={item.name}
-                            character={item.character}
-                            profile_path={item.profile_path}
-                        />
-                    </Col>
-                )
-            });
-        }
+        credits.cast.slice(0, 6).map((item, index) => {
+            movieCastMapped.push(
+                <Col xs={12} sm={6} md={4} key={index}>
+                    <MovieCast
+                        id={item.id}
+                        name={item.name}
+                        character={item.character}
+                        profile_path={item.profile_path}
+                    />
+                </Col>
+            )
+        });
 
         // Map & Return Trailers
         let movieTrailersMapped = [];
-        if (videos !== undefined) {
-            videos.results.slice(0, 2).map((item, index) => {
-                movieTrailersMapped.push(
-                    <Col xs={24} md={12} key={index}>
-                        <MovieTrailer
-                            id={item.id}
-                            videoId={item.key}
-                        />
-                    </Col>
-                )
-            });
-        }
+        videos.results.slice(0, 2).map((item, index) => {
+            movieTrailersMapped.push(
+                <Col xs={24} md={12} key={index}>
+                    <MovieTrailer
+                        id={item.id}
+                        videoId={item.key}
+                    />
+                </Col>
+            )
+        });
 
         return (
             <div className="movie-page">
