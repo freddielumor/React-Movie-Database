@@ -1,4 +1,4 @@
-import { GET_MOVIE_LIST_REQUEST, GET_MOVIE_LIST_SUCCESS, GET_MOVIE_LIST_ERROR } from '../Actions/types';
+import { GET_MOVIE_LIST_REQUEST, GET_MOVIE_LIST_SUCCESS, GET_MOVIE_LIST_ERROR } from '../Actions/constants';
 
 const initialState = {
     movies: [],
