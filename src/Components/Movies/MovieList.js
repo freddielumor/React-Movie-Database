@@ -55,9 +55,9 @@ class MovieList extends Component {
     }
 }
 
-const mapDispatchToProps = dispatch => bindActionCreators({
-    getMovieList
-}, dispatch);
+const mapDispatchToProps = {
+  getMovieList
+};
 
 const mapStateToProps = state => ({
     movies: state.movieList.movies,
