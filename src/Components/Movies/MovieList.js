@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col } from 'rsuite';
-import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux';
 import { getMovieList } from '../../Redux/Actions/getMovieListAction';
 
@@ -17,7 +16,6 @@ class MovieList extends Component {
     }
 
     render() {
-        console.log({ movies }, { isLoaded })
         const { movies, isLoaded } = this.props;
 
         // Movie Loading State

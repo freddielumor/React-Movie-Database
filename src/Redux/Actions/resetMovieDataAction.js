@@ -1,4 +1,4 @@
-import { RESET_MOVIE_DATA } from './types';
+import { RESET_MOVIE_DATA } from "./constants";
 
 export function resetMovieData() {
     return {

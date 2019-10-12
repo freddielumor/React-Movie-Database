@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { Grid, Row, Col } from 'rsuite';
-import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux';
 import { getMovieData } from '../../Redux/Actions/getMovieDataAction';
 import { resetMovieData } from '../../Redux/Actions/resetMovieDataAction';
@@ -120,10 +118,10 @@ class MoviePage extends Component {
     }
 }
 
-const mapDispatchToProps = dispatch => bindActionCreators({
-    getMovieData,
-    resetMovieData
-}, dispatch);
+const mapDispatchToProps = {
+  getMovieData,
+  resetMovieData
+};
 
 const mapStateToProps = state => ({
     movie: state.movieData.movie,

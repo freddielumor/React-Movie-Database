@@ -1,4 +1,9 @@
-import { GET_MOVIE_DATA_REQUEST, GET_MOVIE_DATA_SUCCESS, GET_MOVIE_DATA_ERROR, RESET_MOVIE_DATA } from '../Actions/types';
+import {
+  GET_MOVIE_DATA_REQUEST,
+  GET_MOVIE_DATA_SUCCESS,
+  GET_MOVIE_DATA_ERROR,
+  RESET_MOVIE_DATA
+} from "../Actions/constants";
 
 const initialState = {
     movie: {},
