@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const WebpackMd5Hash = require("webpack-md5-hash");
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
     entry: ['babel-polyfill', './src/index.js'],
@@ -40,7 +40,7 @@ module.exports = {
         compress: true
     },
     plugins: [
-        new CleanWebpackPlugin('public', {}),
+        new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
             filename: "main.[hash].css"
         }),
