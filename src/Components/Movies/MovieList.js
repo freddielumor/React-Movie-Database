@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { Grid, Row, Col } from 'rsuite';
 import { connect } from 'react-redux';
 import { getMovieList } from '../../Redux/Actions/getMovieListAction';
+import {
+  movieListSelector,
+  moviesListLoadedSelector
+} from "../../Redux/Selectors/selectors";
 
 // Components
 import MovieCard from './MovieCard';
@@ -58,8 +62,8 @@ const mapDispatchToProps = {
 };
 
 const mapStateToProps = state => ({
-    movies: state.movieList.movies,
-    isLoaded: state.movieList.moviesLoaded
-})
+  movies: movieListSelector(state),
+  isLoaded: moviesListLoadedSelector(state)
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(MovieList);

@@ -3,6 +3,10 @@ import { Grid, Row, Col } from 'rsuite';
 import { connect } from 'react-redux';
 import { getMovieData } from '../../Redux/Actions/getMovieDataAction';
 import { resetMovieData } from '../../Redux/Actions/resetMovieDataAction';
+import {
+  movieDataSelector,
+  movieLoadedSelector
+} from "../../Redux/Selectors/selectors";
 import './MoviePage.scss';
 
 // Components
@@ -124,8 +128,8 @@ const mapDispatchToProps = {
 };
 
 const mapStateToProps = state => ({
-    movie: state.movieData.movie,
-    isLoaded: state.movieData.movieLoaded
-})
+  movie: movieDataSelector(state),
+  isLoaded: movieLoadedSelector(state)
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(MoviePage);
