@@ -4,8 +4,8 @@
         "@babel/preset-react"
     ],
     "plugins": [
-        "transform-class-properties",
-        "babel-plugin-transform-regenerator",
-        "@babel/plugin-proposal-object-rest-spread"
+        "@babel/plugin-proposal-object-rest-spread",
+        "@babel/plugin-proposal-class-properties",
+        "@babel/plugin-transform-regenerator"
     ]
 }
