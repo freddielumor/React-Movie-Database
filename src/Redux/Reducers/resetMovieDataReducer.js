@@ -2,12 +2,12 @@ import {
   GET_MOVIE_DATA_REQUEST,
   GET_MOVIE_DATA_SUCCESS,
   GET_MOVIE_DATA_ERROR
-} from "../Actions/constants";
+} from '../Actions/constants';
 
 const initialState = {
     movie: {},
     movieLoaded: false
-}
+};
 
 export default function (state = initialState, action) {
     switch (action.type) {
@@ -15,18 +15,18 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 requestingMovieData: true
-            }
+            };
         case GET_MOVIE_DATA_SUCCESS:
             return {
                 ...state,
                 movie: action.payload,
                 movieLoaded: true
-            }
+            };
         case GET_MOVIE_DATA_ERROR:
             return {
                 ...state,
                 requestingMovieDataError: action.payload
-            }
+            };
         default:
             return state;
     }

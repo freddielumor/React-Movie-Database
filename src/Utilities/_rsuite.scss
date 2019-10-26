@@ -1,5 +1,4 @@
 @charset "utf-8";
-/* stylelint-disable */
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -196,8 +195,7 @@ textarea {
     display: none;
   }
 }
-/* stylelint-disable */
-/* stylelint-disable */
+
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -553,7 +551,6 @@ button {
   overflow: visible;
   clip: auto;
 }
-/* stylelint-disable */
 @font-face {
   font-family: "rsuite-icon-font";
   src: url("//cdn.jsdelivr.net/npm/rsuite-icon-font@3.0.0/fonts/rsuite-icon-font.eot");
@@ -627,7 +624,7 @@ button {
 }
 .rs-icon-angle-double-left::before {
   content: "\f100";
-}
+} 
 .rs-icon-angle-double-right::before {
   content: "\f101";
 }
@@ -11691,7 +11688,6 @@ textarea.rs-input-group-inside.rs-input-group-xs > .rs-input-group-btn {
           appearance: textfield;
 }
 .rs-input-number input[type=number]::-webkit-inner-spin-button {
-  /* stylelint-disable */
   -webkit-appearance: none;
 }
 .rs-loader {

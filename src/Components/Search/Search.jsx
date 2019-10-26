@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Grid, Row, Col, Input } from 'rsuite';
+import {
+    Grid, Row, Col, Input
+ } from 'rsuite';
 import axios from 'axios';
 import './Search.scss';
 
@@ -8,7 +10,7 @@ import SearchResult from './SearchResult';
 
 class Search extends Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             searchTerm: '',
             apiUrl: 'https://api.themoviedb.org/3/search/movie',
@@ -18,20 +20,21 @@ class Search extends Component {
     }
 
     handleTextChange = e => {
+        const { apiUrl, apiKey } = this.state;
         const val = e;
         this.setState({
             searchTerm: val
         },
             // Call API on text change
             () => {
-                if (val === "") {
+                if (val === '') {
                     this.setState({
                         searchResults: []
                     });
                 } else {
                     axios
                         .get(
-                            `${this.state.apiUrl}?api_key=${this.state.apiKey}&language=en-US&query=${val}`
+                            `${apiUrl}?api_key=${apiKey}&language=en-US&query=${val}`
                         )
                         .then(res => this.setState({ searchResults: res.data.results }))
                         .catch(err => console.log(err));
@@ -44,29 +47,27 @@ class Search extends Component {
         if (e.keyCode === 27) {
             this.setState({
                 searchResults: [],
-                searchTerm: ""
+                searchTerm: ''
             });
         }
     }
 
 
     render() {
-        const { searchResults } = this.state;
+        const { searchResults, searchTerm } = this.state;
 
         // Map over search results & return data
-        let searchResultsMapped = searchResults.map((item, index) => {
-            return (
-                <Col key={index}>
-                    <SearchResult
-                        id={item.id}
-                        image={item.poster_path}
-                        title={item.title}
-                        description={item.overview}
-                        releaseDate={item.release_date}
-                    />
-                </Col>
-            );
-        });
+        const searchResultsMapped = searchResults.map((item) => (
+            <Col key={item.id}>
+            <SearchResult
+                id={item.id}
+                image={item.poster_path}
+                title={item.title}
+                description={item.overview}
+                releaseDate={item.release_date}
+            />
+            </Col>
+        ));
 
         return (
             <div className="search">
@@ -78,7 +79,7 @@ class Search extends Component {
                                     placeholder="Search for a movie..."
                                     onChange={e => this.handleTextChange(e)}
                                     onKeyDown={e => this.handleClearTextField(e)}
-                                    value={this.state.searchTerm}
+                                    value={searchTerm}
                                 />
                             </form>
                         </Col>
@@ -100,7 +101,7 @@ class Search extends Component {
                     </Row>
                 </Grid>
             </div>
-        )
+        );
     }
 }
 

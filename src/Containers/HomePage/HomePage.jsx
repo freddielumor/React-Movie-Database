@@ -5,7 +5,7 @@ import Search from '../../Components/Search/Search';
 import MovieList from '../../Components/Movies/MovieList';
 
 
-const HomePage = props => (
+const HomePage = () => (
     <main className="app__homepage">
         <Search />
         <MovieList />

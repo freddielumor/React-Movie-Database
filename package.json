@@ -6,11 +6,12 @@
     "scripts": {
         "start": "webpack-dev-server --mode development --hot",
         "build": "webpack --mode production",
-        "lint": "npm-run-all --parallel lint:css lint:js",
-        "lint:scss": "stylelint 'src/**/*.scss' --syntax scss",
-        "lint:scss:fix": "stylelint 'src/**/*.scss' --syntax scss --fix",
-        "lint:js": "eslint . --ext .js,.jsx",
-        "lint:js:fix": "npm run lint:js -- --fix"
+        "lint": "npm-run-all --parallel lint:scss lint:js",
+        "lint:scss": "stylelint 'src/**/*.scss'",
+        "lint:scss:fix": "npm run stylelint:scss -- --fix",
+        "lint:js": "eslint --ext js,jsx .",
+        "lint:js:fix": "npm run lint:js -- --fix",
+        "lint:fix": "npm-run-all --parallel lint:scss:fix lint:js:fix"
     },
     "lint-staged": {
         "src/**/*.{js,jsx}": [
@@ -82,6 +83,7 @@
         "react-hot-loader": "^4.2.0",
         "sass-loader": "^8.0.0",
         "style-loader": "^1.0.0",
+        "stylelint": "^11.1.1",
         "webpack": "^4.10.2",
         "webpack-cli": "^3.0.1",
         "webpack-dev-server": "^3.1.4"

@@ -1,8 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import store from './Redux/store';
 import { Grid, Row, Col } from 'rsuite';
+import store from './Redux/store';
 import './App.scss';
 
 // Containers
@@ -14,9 +14,8 @@ import ErrorPage from './Containers/ErrorPage/ErrorPage';
 import Header from './Components/Layout/Header';
 import Footer from './Components/Layout/Footer';
 
-const App = () => {
-    return (
-        <Provider store={store} >
+const App = () => (
+        <Provider store={store}>
             <div className="app">
                 <Grid>
                     <Row>
@@ -24,14 +23,16 @@ const App = () => {
                             <Header />
                             <Router>
                                 <Switch>
-                                    <Route exact path="/"
+                                    <Route
+                                        exact
+                                        path="/"
                                         render={props => <HomePage {...props} />}
                                     />
-                                    <Route path="/movie/:id"
+                                    <Route
+                                        path="/movie/:id"
                                         render={props => <MoviePage {...props} />}
                                     />
-                                    <Route render={props => <ErrorPage {...props} />}
-                                    />
+                                    <Route render={props => <ErrorPage {...props} />} />
                                 </Switch>
                             </Router>
                             <Footer />
@@ -40,7 +41,7 @@ const App = () => {
                 </Grid>
             </div>
         </Provider>
-    )
-}
+);
+
 
 export default App;
