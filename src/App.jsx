@@ -6,13 +6,13 @@ import store from './Redux/store';
 import './App.scss';
 
 // Containers
-import HomePage from './Containers/HomePage/HomePage';
-import MoviePage from './Containers/MoviePage/MoviePage';
-import ErrorPage from './Containers/ErrorPage/ErrorPage';
+import HomePage from './Containers/HomePage/HomePage.jsx';
+import MoviePage from './Containers/MoviePage/MoviePage.jsx';
+import ErrorPage from './Containers/ErrorPage/ErrorPage.jsx';
 
 // Components
-import Header from './Components/Layout/Header';
-import Footer from './Components/Layout/Footer';
+import Header from './Components/Layout/Header.jsx';
+import Footer from './Components/Layout/Footer.jsx';
 
 const App = () => (
         <Provider store={store}>

@@ -11,8 +11,8 @@ import {
 import './MoviePage.scss';
 
 // Components
-import MovieCast from '../../Components/Movies/MovieCast';
-import MovieTrailer from '../../Components/Movies/MovieTrailer';
+import MovieCast from '../../Components/Movies/MovieCast.jsx';
+import MovieTrailer from '../../Components/Movies/MovieTrailer.jsx';
 
 
 class MoviePage extends Component {

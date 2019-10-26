@@ -9,7 +9,7 @@ import {
 } from '../../Redux/Selectors/selectors';
 
 // Components
-import MovieCard from './MovieCard';
+import MovieCard from './MovieCard.jsx';
 
 class MovieList extends Component {
     componentDidMount() {

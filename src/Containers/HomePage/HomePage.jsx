@@ -1,8 +1,8 @@
 import React from 'react';
 
 // Components
-import Search from '../../Components/Search/Search';
-import MovieList from '../../Components/Movies/MovieList';
+import Search from '../../Components/Search/Search.jsx';
+import MovieList from '../../Components/Movies/MovieList.jsx';
 
 
 const HomePage = () => (

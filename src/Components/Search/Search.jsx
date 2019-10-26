@@ -6,7 +6,7 @@ import axios from 'axios';
 import './Search.scss';
 
 // Components
-import SearchResult from './SearchResult';
+import SearchResult from './SearchResult.jsx';
 
 class Search extends Component {
     constructor(props) {

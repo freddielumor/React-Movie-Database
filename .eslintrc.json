@@ -25,7 +25,6 @@
     ],
     "rules": {
        "react/jsx-indent": "off",
-       "react/jsx-filename-extension": "off",
        "import/prefer-default-export": "off",
        "react/no-did-update-set-state": "off",
        "react/jsx-props-no-spreading": "off",
@@ -35,6 +34,16 @@
        "arrow-parens": "off",
        "react/jsx-one-expression-per-line": "off",
        "indent": "off",
-       "comma-dangle": "off"
+       "comma-dangle": "off",
+       "import/no-extraneous-dependencies": [
+           "error"
+       ],
+       "import/extensions": [
+           "error",
+           "always",
+           {
+               "js": "never"
+           }
+       ]
     }
 }
