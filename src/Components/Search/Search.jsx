@@ -37,7 +37,7 @@ class Search extends Component {
                             `${apiUrl}?api_key=${apiKey}&language=en-US&query=${val}`
                         )
                         .then(res => this.setState({ searchResults: res.data.results }))
-                        .catch(err => console.log(err));
+                        .catch(err => (err));
                 }
             });
     };

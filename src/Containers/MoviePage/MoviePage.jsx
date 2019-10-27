@@ -16,30 +16,15 @@ import MovieTrailer from '../../Components/Movies/MovieTrailer.jsx';
 
 
 class MoviePage extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-          movieId: null
-        };
-    }
-
     // Get movie id when page is loaded
     componentDidMount() {
         const {
           match: {
             params: { id }
-          }
-        } = this.props;
-        const { movieId } = this.state;
-        const currentMovieId = id;
-        this.setState(
-          {
-            movieId: currentMovieId
           },
-          () => {
-            getMovieData(movieId);
-          }
-        );
+          getMovie
+        } = this.props;
+        getMovie(id);
     }
 
     // Reset movie data when leaving page
@@ -56,9 +41,9 @@ class MoviePage extends Component {
           backdrop_path: backdropPath,
           overview,
           credits,
-          videos
+          videos,
         } = movie;
-        const Background = `https://image.tmdb.org/t/p/w1280${backdropPath}`;
+        const background = `https://image.tmdb.org/t/p/w1280${backdropPath}`;
 
         // Set page loading state while awaiting data
         if (!isLoaded) {
@@ -99,7 +84,7 @@ class MoviePage extends Component {
                             <div
                                 className="movie-page__hero"
                                 style={{
-                                    backgroundImage: `url(${Background === null ? 'http://via.placeholder.com/300x450' : Background})`
+                                    backgroundImage: `url(${background === null ? 'http://via.placeholder.com/300x450' : background})`
                                 }}
                             />
                             <div className="movie-page__details">
@@ -141,7 +126,7 @@ class MoviePage extends Component {
 }
 
 const mapDispatchToProps = {
-  getMovieData,
+  getMovie: getMovieData,
   resetMovieData
 };
 
@@ -162,20 +147,33 @@ MoviePage.propTypes = {
     release_date: PropTypes.string,
     backdrop_path: PropTypes.string,
     overview: PropTypes.string,
-    credits: PropTypes.string,
-    videos: PropTypes.arrayOf(PropTypes.object)
+    credits: PropTypes.shape({
+      cast: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.number,
+        name: PropTypes.string,
+        character: PropTypes.string,
+        profile_path: PropTypes.string
+      })),
+    }),
+    videos: PropTypes.shape({
+      results: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.string,
+      }))
+    })
   }),
-  isLoaded: PropTypes.bool
+  isLoaded: PropTypes.bool,
+  getMovie: PropTypes.func
 };
 
 MoviePage.defaultProps = {
   match: {
     params: {
-      id: null
+      id: undefined
     }
   },
   movie: [],
-  isLoaded: false
+  isLoaded: false,
+  getMovie: () => {}
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(MoviePage);
