@@ -5,7 +5,7 @@ const WebpackMd5Hash = require('webpack-md5-hash');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-  entry: ['babel-polyfill', './src/index.js'],
+  entry: ['@babel/polyfill', './src/index.js'],
   output: {
     path: path.resolve(__dirname, 'public'),
     publicPath: '',
@@ -16,7 +16,7 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: ['babel-loader']
+        use: ['babel-loader', 'eslint-loader']
       },
       {
         test: /\.scss$/,
@@ -39,7 +39,9 @@ module.exports = {
       }
     ]
   },
-  resolve: { extensions: ['.js', '.jsx'] },
+  resolve: {
+    extensions: ['*', '.js', '.jsx']
+  },
   devServer: {
     historyApiFallback: true,
     compress: true
