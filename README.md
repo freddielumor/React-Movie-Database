@@ -29,3 +29,5 @@ $ yarn start
 - Axios
 - TMBD API Data
 - Webpack
+- ESLint (Airbnb config)
+- Stylelint
