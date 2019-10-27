@@ -20,16 +20,17 @@ const MovieCast = ({
 );
 
 MovieCast.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.number,
   name: PropTypes.string,
   character: PropTypes.string,
   profile_path: PropTypes.string,
 };
 
 MovieCast.defaultProps = {
+  id: undefined,
   name: '',
   character: '',
-  profile_path: undefined,
+  profile_path: '',
 };
 
 

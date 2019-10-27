@@ -18,8 +18,8 @@ const MovieTrailer = ({ id, videoId }) => (
 );
 
 MovieTrailer.propTypes = {
-  id: PropTypes.number.isRequired,
-  videoId: PropTypes.number.isRequired
+  id: PropTypes.string.isRequired,
+  videoId: PropTypes.string.isRequired
 };
 
 export default MovieTrailer;

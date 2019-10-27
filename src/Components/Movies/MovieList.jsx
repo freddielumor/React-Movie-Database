@@ -12,52 +12,52 @@ import {
 import MovieCard from './MovieCard.jsx';
 
 class MovieList extends Component {
-    componentDidMount() {
-        const { isLoaded } = this.props;
-        // Get movies if not already loaded
-        if (!isLoaded) {
-            getMovieList();
-        }
+  componentDidMount() {
+      const { isLoaded, getMovies } = this.props;
+      // Get movies if not already loaded
+      if (!isLoaded) {
+          getMovies();
+      }
+  }
+
+  render() {
+    const { movies, isLoaded } = this.props;
+
+    // Movie Loading State
+    if (!isLoaded) {
+        return <h1 style={{ color: '#fff' }}>Loading...</h1>;
     }
 
-    render() {
-        const { movies, isLoaded } = this.props;
+    // Map over results & return data
+    const movieListMapped = movies.map((item) => (
+          <Col xs={12} md={6} key={item.id}>
+            <MovieCard
+              id={item.id}
+              image={item.poster_path}
+              title={item.title}
+              description={item.overview}
+              releaseDate={item.release_date}
+            />
+          </Col>
+    ));
 
-        // Movie Loading State
-        if (!isLoaded) {
-            return <h1 style={{ color: '#fff' }}>Loading...</h1>;
-        }
-
-        // Map over results & return data
-        const movieListMapped = movies.map((item) => (
-              <Col xs={12} md={6} key={item.id}>
-                <MovieCard
-                  id={item.id}
-                  image={item.poster_path}
-                  title={item.title}
-                  description={item.overview}
-                  releaseDate={item.release_date}
-                />
-              </Col>
-        ));
-
-        return (
-            <div className="movie-list">
-                <Grid fluid>
-                    <Row>
-                        <Col xs={24}><h2>Latest Releases</h2></Col>
-                    </Row>
-                    <Row>
-                        {movieListMapped}
-                    </Row>
-                </Grid>
-            </div>
-        );
-    }
+    return (
+        <div className="movie-list">
+            <Grid fluid>
+                <Row>
+                    <Col xs={24}><h2>Latest Releases</h2></Col>
+                </Row>
+                <Row>
+                    {movieListMapped}
+                </Row>
+            </Grid>
+        </div>
+    );
+  }
 }
 
 const mapDispatchToProps = {
-  getMovieList,
+  getMovies: getMovieList,
 };
 
 const mapStateToProps = state => ({
@@ -67,18 +67,22 @@ const mapStateToProps = state => ({
 
 MovieList.propTypes = {
   isLoaded: PropTypes.bool,
-  movies: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number,
-    image: PropTypes.string,
-    title: PropTypes.string,
-    description: PropTypes.string,
-    releaseDate: PropTypes.string
-  })),
+  movies: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      image: PropTypes.string,
+      title: PropTypes.string,
+      description: PropTypes.string,
+      releaseDate: PropTypes.string
+    })
+  ),
+  getMovies: PropTypes.func
 };
 
 MovieList.defaultProps = {
   isLoaded: false,
-  movies: []
+  movies: [],
+  getMovies: undefined
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(MovieList);
