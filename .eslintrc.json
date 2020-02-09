@@ -22,7 +22,8 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        "react-hooks"
     ],
     "rules": {
        "react/jsx-indent": "off",
@@ -46,6 +47,8 @@
                "js": "never"
            }
        ],
-       "quotes": "off"
+       "quotes": "off",
+       "react-hooks/rules-of-hooks": "error",
+       "react-hooks/exhaustive-deps": "warn"
     }
 }

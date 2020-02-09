@@ -1,88 +1,72 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { Grid, Row, Col } from 'rsuite';
-import { connect } from 'react-redux';
-import { getMovieList } from '../../Redux/Actions/getMovieListAction';
-import {
-  movieListSelector,
-  moviesListLoadedSelector,
-} from '../../Redux/Selectors/selectors';
+import React, { useEffect } from "react";
+// import PropTypes from "prop-types";
+import { Grid, Row, Col } from "rsuite";
+import { useSelector, useDispatch } from "react-redux";
+import { getMovieList } from "../../Redux/Actions/getMovieListAction";
 
 // Components
-import MovieCard from './MovieCard.jsx';
+import MovieCard from "./MovieCard.jsx";
 
-class MovieList extends Component {
-  componentDidMount() {
-      const { isLoaded, getMovies } = this.props;
-      // Get movies if not already loaded
-      if (!isLoaded) {
-          getMovies();
-      }
-  }
+const MovieList = () => {
+  const moviesLoaded = useSelector(state => state.movieList.moviesLoaded);
+  const dispatch = useDispatch();
+  const movies = useSelector(state => state.movieList.movies);
 
-  render() {
-    const { movies, isLoaded } = this.props;
-
-    // Movie Loading State
-    if (!isLoaded) {
-        return <h1 style={{ color: '#fff' }}>Loading...</h1>;
+  useEffect(() => {
+    if (!moviesLoaded) {
+      dispatch(getMovieList());
     }
+  }, [dispatch, moviesLoaded]);
 
-    // Map over results & return data
-    const movieListMapped = movies.map((item) => (
-          <Col xs={12} md={6} key={item.id}>
-            <MovieCard
-              id={item.id}
-              image={item.poster_path}
-              title={item.title}
-              description={item.overview}
-              releaseDate={item.release_date}
-            />
-          </Col>
-    ));
-
-    return (
-        <div className="movie-list">
-            <Grid fluid>
-                <Row>
-                    <Col xs={24}><h2>Latest Releases</h2></Col>
-                </Row>
-                <Row>
-                    {movieListMapped}
-                </Row>
-            </Grid>
-        </div>
-    );
+  // Movie Loading State
+  if (!moviesLoaded) {
+    return <h1 style={{ color: "#fff" }}>Loading...</h1>;
   }
-}
 
-const mapDispatchToProps = {
-  getMovies: getMovieList,
+  const movieListMapped = movies.map(item => (
+    <Col xs={12} md={6} key={item.id}>
+      <MovieCard
+        id={item.id}
+        image={item.poster_path}
+        title={item.title}
+        description={item.overview}
+        releaseDate={item.release_date}
+      />
+    </Col>
+  ));
+
+  return (
+    <div className="movie-list">
+      <Grid fluid>
+        <Row>
+          <Col xs={24}>
+            <h2>Latest Releases</h2>
+          </Col>
+        </Row>
+        <Row>{movieListMapped}</Row>
+      </Grid>
+    </div>
+  );
 };
 
-const mapStateToProps = state => ({
-  movies: movieListSelector(state),
-  isLoaded: moviesListLoadedSelector(state),
-});
+// MovieList.propTypes = {
+//   moviesLoaded: PropTypes.bool,
+//   movies: PropTypes.arrayOf(
+//     PropTypes.shape({
+//       id: PropTypes.number,
+//       image: PropTypes.string,
+//       title: PropTypes.string,
+//       description: PropTypes.string,
+//       releaseDate: PropTypes.string
+//     })
+//   ),
+//   getMovieList: PropTypes.func
+// };
 
-MovieList.propTypes = {
-  isLoaded: PropTypes.bool,
-  movies: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number,
-      image: PropTypes.string,
-      title: PropTypes.string,
-      description: PropTypes.string,
-      releaseDate: PropTypes.string
-    })
-  ),
-  getMovies: PropTypes.func
-};
+// MovieList.defaultProps = {
+//   moviesLoaded: false,
+//   movies: [],
+//   getMovieList: undefined
+// };
 
-MovieList.defaultProps = {
-  isLoaded: false,
-  movies: [],
-  getMovies: undefined
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(MovieList);
+export default MovieList;
