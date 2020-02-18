@@ -1,11 +1,6 @@
-import React from 'react';
-import {
-    Grid,
-    Row,
-    Col,
-    Divider,
-} from 'rsuite';
-import './Header.scss';
+import React from "react";
+import { Grid, Row, Col, Divider } from "rsuite";
+import "./Header.scss";
 
 const Header = () => (
   <header className="app__header">
@@ -13,13 +8,16 @@ const Header = () => (
       <Row>
         <Col xs={24}>
           <h1>
-            <a className="app__header--headline" href="/">
-              {' '}
+            <a
+              className="app__header--headline"
+              href="/"
+              data-testid="appHeader"
+            >
               React Movie Database
             </a>
           </h1>
-          <p>
-            Made by{' '}
+          <p data-testid="appAuthor">
+            Made by{" "}
             <a
               className="app__header--freddie"
               href="https://github.com/freddielumor"

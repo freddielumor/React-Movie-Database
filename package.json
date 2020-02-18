@@ -1,101 +1,105 @@
 {
-    "name": "react-movie-database",
-    "version": "1.0.0",
-    "description": "A React Movie Database",
-    "main": "index.js",
-    "scripts": {
-        "start": "webpack-dev-server --mode development --hot",
-        "build": "webpack --mode production",
-        "lint": "npm-run-all --parallel lint:scss lint:js",
-        "lint:scss": "stylelint 'src/**/*.scss'",
-        "lint:scss:fix": "npm run stylelint:scss -- --fix",
-        "lint:js": "eslint --ext js,jsx .",
-        "lint:js:fix": "npm run lint:js -- --fix",
-        "lint:fix": "npm-run-all --parallel lint:scss:fix lint:js:fix",
-        "test": "jest"
-    },
-    "lint-staged": {
-        "src/**/*.{js,jsx}": [
-            "npm run lint:js",
-            "git add"
-        ],
-        "src/**/*.scss": [
-            "npm run lint:scss",
-            "git add"
-        ]
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "lint-staged"
-        }
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/freddielumor/React-Movie-Database.git"
-    },
-    "keywords": [],
-    "author": "Freddie Lumor",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/freddielumor/React-Movie-Database/issues"
-    },
-    "homepage": "https://freddielumor.github.io/React-Movie-Database/",
-    "dependencies": {
-        "@babel/polyfill": "^7.6.0",
-        "axios": "^0.19.0",
-        "clean-webpack-plugin": "^3.0.0",
-        "cypress": "^3.8.3",
-        "npm": "^6.13.4",
-        "prop-types": "^15.7.2",
-        "react": "^16.10.2",
-        "react-dom": "^16.10.2",
-        "react-helmet": "^5.2.0",
-        "react-redux": "^7.1.1",
-        "react-router-dom": "^5.1.2",
-        "redux": "^4.0.4",
-        "redux-devtools-extension": "^2.13.8",
-        "redux-logger": "^3.0.6",
-        "redux-thunk": "^2.3.0",
-        "reselect": "^4.0.0",
-        "rsuite": "^4.0.3",
-        "webpack-md5-hash": "^0.0.6"
-    },
-    "devDependencies": {
-        "@babel/core": "^7.6.4",
-        "@babel/plugin-proposal-class-properties": "^7.5.5",
-        "@babel/plugin-proposal-object-rest-spread": "^7.6.2",
-        "@babel/plugin-transform-regenerator": "^7.4.5",
-        "@babel/preset-env": "^7.8.4",
-        "@babel/preset-react": "^7.8.3",
-        "@testing-library/react": "^9.4.0",
-        "babel": "^6.23.0",
-        "babel-eslint": "^10.0.3",
-        "babel-jest": "^25.1.0",
-        "babel-loader": "^8.0.6",
-        "css-loader": "^3.2.0",
-        "eslint": "^6.5.1",
-        "eslint-config-airbnb": "^18.0.1",
-        "eslint-loader": "^3.0.2",
-        "eslint-plugin-import": "^2.18.2",
-        "eslint-plugin-jsx-a11y": "^6.2.3",
-        "eslint-plugin-react": "^7.16.0",
-        "eslint-plugin-react-hooks": "^2.3.0",
-        "file-loader": "^4.2.0",
-        "html-webpack-plugin": "^3.2.0",
-        "husky": "^3.0.9",
-        "identity-obj-proxy": "^3.0.0",
-        "jest": "^25.1.0",
-        "lint-staged": "^9.4.2",
-        "mini-css-extract-plugin": "^0.8.0",
-        "node-sass": "^4.9.0",
-        "npm-run-all": "^4.1.5",
-        "react-hot-loader": "^4.2.0",
-        "react-test-renderer": "^16.12.0",
-        "sass-loader": "^8.0.0",
-        "style-loader": "^1.0.0",
-        "stylelint": "^11.1.1",
-        "webpack": "^4.41.2",
-        "webpack-cli": "^3.0.1",
-        "webpack-dev-server": "^3.1.4"
+  "name": "react-movie-database",
+  "version": "1.0.0",
+  "description": "A React Movie Database",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --mode development --hot",
+    "build": "webpack --mode production",
+    "lint": "npm-run-all --parallel lint:scss lint:js",
+    "lint:scss": "stylelint 'src/**/*.scss'",
+    "lint:scss:fix": "npm run stylelint:scss -- --fix",
+    "lint:js": "eslint --ext js,jsx .",
+    "lint:js:fix": "npm run lint:js -- --fix",
+    "lint:fix": "npm-run-all --parallel lint:scss:fix lint:js:fix",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:watchAll": "jest --watchAll"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx}": [
+      "npm run lint:js",
+      "git add"
+    ],
+    "src/**/*.scss": [
+      "npm run lint:scss",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freddielumor/React-Movie-Database.git"
+  },
+  "keywords": [],
+  "author": "Freddie Lumor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/freddielumor/React-Movie-Database/issues"
+  },
+  "homepage": "https://freddielumor.github.io/React-Movie-Database/",
+  "dependencies": {
+    "@babel/polyfill": "^7.6.0",
+    "axios": "^0.19.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "cypress": "^3.8.3",
+    "npm": "^6.13.4",
+    "prop-types": "^15.7.2",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-helmet": "^5.2.0",
+    "react-redux": "^7.1.1",
+    "react-router-dom": "^5.1.2",
+    "redux": "^4.0.4",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
+    "reselect": "^4.0.0",
+    "rsuite": "^4.0.3",
+    "webpack-md5-hash": "^0.0.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.6.2",
+    "@babel/plugin-transform-regenerator": "^7.4.5",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-react": "^7.8.3",
+    "@testing-library/dom": "^6.12.2",
+    "@testing-library/jest-dom": "^5.1.1",
+    "@testing-library/react": "^9.4.0",
+    "babel": "^6.23.0",
+    "babel-eslint": "^10.0.3",
+    "babel-jest": "^25.1.0",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-loader": "^3.0.2",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-hooks": "^2.3.0",
+    "file-loader": "^4.2.0",
+    "html-webpack-plugin": "^3.2.0",
+    "husky": "^3.0.9",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^25.1.0",
+    "lint-staged": "^9.4.2",
+    "mini-css-extract-plugin": "^0.8.0",
+    "node-sass": "^4.9.0",
+    "npm-run-all": "^4.1.5",
+    "react-hot-loader": "^4.2.0",
+    "react-test-renderer": "^16.12.0",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
+    "stylelint": "^11.1.1",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.0.1",
+    "webpack-dev-server": "^3.1.4"
+  }
 }

@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Header matches snapshot 1`] = `
+<DocumentFragment>
+  <header
+    class="app__header"
+  >
+    <div
+      class="rs-grid-container"
+    >
+      <div
+        class="rs-row"
+      >
+        <div
+          class="rs-col rs-col-xs-24"
+        >
+          <h1>
+            <a
+              class="app__header--headline"
+              data-testid="appHeader"
+              href="/"
+            >
+              React Movie Database
+            </a>
+          </h1>
+          <p
+            data-testid="appAuthor"
+          >
+            Made by 
+            <a
+              class="app__header--freddie"
+              href="https://github.com/freddielumor"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Freddie
+            </a>
+          </p>
+          <div
+            class="rs-divider app__divider rs-divider-horizontal"
+          />
+        </div>
+      </div>
+    </div>
+  </header>
+</DocumentFragment>
+`;
